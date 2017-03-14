@@ -11,8 +11,8 @@ import java.sql.SQLException;
 public class SQLConnection {
 
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DB_USER = "sql11163738";
-    private static final String DB_PASSWORD = "kAp8hPZYll";
+    private static final String DB_USER = "sql11163745";
+    private static final String DB_PASSWORD = "RuWhCUG8xz";
     private static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net";
 
     private static Connection connection = null;
