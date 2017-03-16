@@ -39,6 +39,8 @@ public class Theater {
         this.id = id;
     }
 
+
+
     @Override
     public String toString() {
         return "theaterClass{" +
