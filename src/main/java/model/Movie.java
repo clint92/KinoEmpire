@@ -11,7 +11,7 @@ public class Movie {
     int date;
     int length;
 
-    public Movie(String genre, String name, int age, int id, int dato, int length) {
+    public Movie(String genre, String name, int age, int id, int date, int length) {
         this.genre = genre;
         this.name = name;
         this.age = age;
