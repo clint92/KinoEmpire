@@ -72,7 +72,7 @@ public class Movie {
     @Override
     public String toString() {
         return "movieClass{" +
-                "genre='" + genre + '\'' + ", name='" + name + '\'' + ", age=" + age + ", id=" + id + ", dato=" + date + ", length=" + length +
+                "genre='" + genre + '\'' + ", name='" + name + '\'' + ", age=" + age + ", id=" + id + ", date=" + date + ", length=" + length +
                 '}';
     }
 }
