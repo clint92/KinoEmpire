@@ -41,6 +41,7 @@ public class Theater {
         this.id = id;
     }
 
+
     public int getTheaterNumber() {
         return theaterNumber;
     }
@@ -48,6 +49,7 @@ public class Theater {
     public void setTheaterNumber(int theaterNumber) {
         this.theaterNumber = theaterNumber;
     }
+
 
     @Override
     public String toString() {
