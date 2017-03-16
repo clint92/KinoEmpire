@@ -8,7 +8,7 @@ public class Movie {
     String name = "";
     int age;
     int id;
-    int dato;
+    int date;
     int length;
 
     public Movie(String genre, String name, int age, int id, int dato, int length) {
@@ -16,9 +16,10 @@ public class Movie {
         this.name = name;
         this.age = age;
         this.id = id;
-        this.dato = dato;
+        this.date = date;
         this.length = length;
     }
+
 
     public String getGenre() {
         return genre;
@@ -52,12 +53,12 @@ public class Movie {
         this.id = id;
     }
 
-    public int getDato() {
-        return dato;
+    public int getDate() {
+        return date;
     }
 
-    public void setDato(int dato) {
-        this.dato = dato;
+    public void setDate(int dato) {
+        this.date = dato;
     }
 
     public int getLength() {
@@ -71,7 +72,7 @@ public class Movie {
     @Override
     public String toString() {
         return "movieClass{" +
-                "genre='" + genre + '\'' + ", name='" + name + '\'' + ", age=" + age + ", id=" + id + ", dato=" + dato + ", length=" + length +
+                "genre='" + genre + '\'' + ", name='" + name + '\'' + ", age=" + age + ", id=" + id + ", dato=" + date + ", length=" + length +
                 '}';
     }
 }
