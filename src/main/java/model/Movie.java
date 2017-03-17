@@ -10,7 +10,6 @@ public class Movie {
     int id;
     int date;
     int length;
-    Thread th;
 
     public Movie(String genre, String name, int age, int id, int date, int length) {
         this.genre = genre;
@@ -19,8 +18,7 @@ public class Movie {
         this.id = id;
         this.date = date;
         this.length = length;
-        th = new Thread(); // make a new thread
-        th.start(); // start the move thread
+
     }
 
 
