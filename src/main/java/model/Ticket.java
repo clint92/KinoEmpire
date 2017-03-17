@@ -39,4 +39,12 @@ public class Ticket {
         this.sold = sold;
     }
 
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "reserved=" + reserved +
+                ", sold=" + sold +
+                ", price=" + price +
+                '}';
+    }
 }
