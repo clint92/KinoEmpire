@@ -5,9 +5,14 @@ package model;
  */
 public class Ticket {
 
+    int id_ticket;
     int reserved;
     int sold;
     double price;
+
+    public Ticket() {
+
+    }
 
     public Ticket(int reserved, int sold, double price) {
         this.reserved = reserved;
@@ -37,6 +42,12 @@ public class Ticket {
 
     public void setSold(int sold) {
         this.sold = sold;
+    }
+
+    public String toString () {
+
+        return "Ticket ID: " + id_ticket + "Reserved: " + reserved + "Sold: " + sold + "";
+
     }
 
 }
