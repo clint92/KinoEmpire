@@ -1,16 +1,9 @@
 package model;
 
 
-import utility.SQLConnection;
-
-import javax.swing.plaf.nimbus.State;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-import static utility.SQLConnection.getConnection;
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Ahmed Fadhel on 16-03-2017.
@@ -18,55 +11,29 @@ import static utility.SQLConnection.getConnection;
 public class ESO {
 
     Ticket ticket;
-    private java.sql.Connection Connection;
-    private Statement statement;
+    ArrayList<Ticket> tickets = new ArrayList<>();
 
-    public ESO() {
-    }
-
-    public boolean TicketSold(int seat, int row, String theather, String dato){
-        try {
-            Connection = getConnection();
-
-            statement = Connection.createStatement();
-
-            String sql;
-            sql = "SELECT * FROM ticket WHERE seatNr = '" + seat + "' AND rowNr = '" + row + " AND Theather = '" + theather + " AND dato = '" + dato + "'";
-
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while(resultSet.next()){
-                return true;
-            }
-            resultSet.close();
-            statement.close();
-            Connection.close();
-
-        }catch (SQLException e){
-            e.printStackTrace();
+    public boolean isReserved(){
+        if (ticket.getReserved() == 1){
+            return true;
         }
-
         return false;
     }
 
-    public void SellTicket(){
-        try {
-            Connection = getConnection();
-
-            statement = Connection.createStatement();
-
-            String sql;
-
-            sql = "INSERT INTO ticket (price,MoiveName,seatNr,rowNr,Theather,dato)"; //virker ikke endnu lav lige databasen.
-
-            statement.executeUpdate(sql);
-
-            statement.close();
-            Connection.close();
-
-        }catch (SQLException e){
-            e.printStackTrace();
+    public boolean isSold(){
+        if (ticket.getSold() == 1){
+            return true;
         }
+        return false;
+    }
+
+    public ArrayList<Ticket> generateTicket(int ticketNr){
+        Random r = new Random();
+        for (int i = 0; i < ticketNr ; i++) {
+            Ticket ticket = new Ticket(r.nextInt(2),r.nextInt(2), 180);
+            tickets.add(ticket);
+        }
+        return tickets;
     }
 
 }
