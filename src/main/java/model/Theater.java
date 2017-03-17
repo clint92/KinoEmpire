@@ -5,13 +5,15 @@ package model;
  */
 
 public class Theater {
+    int theaterNumber =0;
     int rows = 0;
     int seats = 0;
     int id;
 
-    public Theater(int rows, int seats) {
+    public Theater(int theaterNumber, int rows, int seats) {
         this.rows = rows;
         this.seats = seats;
+        this.theaterNumber = theaterNumber;
         this.id = id;
     }
 
@@ -38,6 +40,16 @@ public class Theater {
     public void setId(int id) {
         this.id = id;
     }
+
+
+    public int getTheaterNumber() {
+        return theaterNumber;
+    }
+
+    public void setTheaterNumber(int theaterNumber) {
+        this.theaterNumber = theaterNumber;
+    }
+
 
     @Override
     public String toString() {
