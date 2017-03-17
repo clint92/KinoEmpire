@@ -1,4 +1,4 @@
-/**
+package controller; /**
  * @author samm0091
  * @version 16-03-2017.
  */
@@ -16,8 +16,9 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private AnchorPane rootLayout;
 
-    public static void main(String[] args) {
-        launch(args);
+
+    public MainApp() {
+
     }
 
     @Override
@@ -27,13 +28,14 @@ public class MainApp extends Application {
 
         initRootLayout();
 
+        showCreateReservationMenu();
     }
 
     public void initRootLayout() {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/view/Start.fxml"));
+            loader.setLocation(MainApp.class.getResource("/view/ReservationMenu.fxml"));
             rootLayout = loader.load();
 
             // Show the scene containing the root layout.
@@ -43,5 +45,24 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void showCreateReservationMenu() {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/CreateReservationMenu.fxml"));
+            AnchorPane personOverview = loader.load();
+
+            // Give the controller access to the main app.
+            CreateReservationController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
