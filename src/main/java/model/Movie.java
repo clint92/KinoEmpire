@@ -18,7 +18,6 @@ public class Movie {
         this.id = id;
         this.date = date;
         this.length = length;
-
     }
 
 
