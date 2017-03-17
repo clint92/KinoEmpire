@@ -19,6 +19,7 @@ public class ReservationMenuController {
 
     public void onCreateReservationClicked() {
         System.out.println("hej");
+        mainApp.showCreateReservationMenu();
 
     }
 

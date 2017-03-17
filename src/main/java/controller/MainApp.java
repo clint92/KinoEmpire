@@ -28,7 +28,7 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        showCreateReservationMenu();
+        //showCreateReservationMenu();
     }
 
     public void initRootLayout() {
@@ -42,6 +42,10 @@ public class MainApp extends Application {
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             primaryStage.show();
+
+            // Give the controller access to the main app.
+            ReservationMenuController controller = loader.getController();
+            controller.setMainApp(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,8 +54,14 @@ public class MainApp extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/CreateReservationMenu.fxml"));
-            AnchorPane personOverview = loader.load();
+            loader.setLocation(MainApp.class.getResource("/view/CreateReservationMenu.fxml"));
+            AnchorPane createReservation = loader.load();
+
+
+            Stage newStage = new Stage();
+            Scene scene = new Scene(createReservation);
+            newStage.setScene(scene);
+            newStage.show();
 
             // Give the controller access to the main app.
             CreateReservationController controller = loader.getController();
