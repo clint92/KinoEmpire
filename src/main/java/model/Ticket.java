@@ -5,9 +5,14 @@ package model;
  */
 public class Ticket {
 
+    int id_ticket;
     int reserved;
     int sold;
     double price;
+
+    public Ticket() {
+
+    }
 
     public Ticket(int reserved, int sold, double price) {
         this.reserved = reserved;
@@ -39,6 +44,7 @@ public class Ticket {
         this.sold = sold;
     }
 
+<<<<<<< HEAD
     @Override
     public String toString() {
         return "Ticket{" +
@@ -47,4 +53,12 @@ public class Ticket {
                 ", price=" + price +
                 '}';
     }
+=======
+    public String toString () {
+
+        return "Ticket ID: " + id_ticket + "Reserved: " + reserved + "Sold: " + sold + "";
+
+    }
+
+>>>>>>> refs/remotes/origin/master
 }
