@@ -1,6 +1,8 @@
+
 import dao.DaoTicketSale;
-import dao.EmployeeDao;
-import model.TicketSale;
+import kino.dao.EmployeeDao;
+import kino.model.TicketSale;
+
 
 /**
  * Created by Dave on 17/03/2017.

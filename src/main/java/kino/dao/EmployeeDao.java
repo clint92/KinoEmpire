@@ -1,7 +1,7 @@
-package dao;
+package kino.dao;
 
-import model.Employee;
-import utility.SQLConnection;
+import kino.model.Employee;
+import kino.utility.SQLConnection;
 import java.sql.*;
 /**
  * Created by ronnilenvighansen on 16/03/2017.
