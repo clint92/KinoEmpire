@@ -19,7 +19,7 @@ public class MovieDao implements MovieDaoInterface {
     public void createMovie(String movieGenre, String movieName, int movieAge, int movieId, String moviePassword, int movieDate, int movieLength){
         try{
             PreparedStatement prepstat = connection.prepareStatement(
-                    "INSERT INTO Employee(movieGenre, movieName, movieage, movieId, moviePassword, movieDate, movieLength) VALUES (?,?,?,?,?,?,?)");
+                    "INSERT INTO movie(movieGenre, movieName, movieage, movieId, moviePassword, movieDate, movieLength) VALUES (?,?,?,?,?,?,?)");
             prepstat.setString(1, movieGenre);
             prepstat.setString(2, movieName);
             prepstat.setInt(3, movieAge);
@@ -35,7 +35,7 @@ public class MovieDao implements MovieDaoInterface {
     }
     public void deleteMovie(int movieId){
         try {
-            PreparedStatement prepstat = connection.prepareStatement("DELETE FROM Movie WHERE movieId = ?");
+            PreparedStatement prepstat = connection.prepareStatement("DELETE FROM movie WHERE movieId = ?");
             prepstat.setInt(1, movieId);
             prepstat.executeUpdate();
         }
