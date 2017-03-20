@@ -1,9 +1,9 @@
-package controller;
+package kino.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
-import MainApp;
-import model.Movie;
+import kino.MainApp;
+import kino.model.Movie;
 
 /**
  * @author samm0091
@@ -17,6 +17,7 @@ public class CreateReservationController {
     ComboBox<String> personSeats;
     @FXML
     ComboBox<String> screeningDate;
+
     public MainApp mainApp;
 
     public CreateReservationController() {

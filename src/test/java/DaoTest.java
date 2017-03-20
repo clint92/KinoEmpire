@@ -1,5 +1,5 @@
-import dao.DaoTicket;
-import model.TicketSale;
+import kino.dao.DaoTicket;
+import kino.model.TicketSale;
 
 /**
  * Created by Dave on 17/03/2017.

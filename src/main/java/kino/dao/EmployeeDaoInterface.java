@@ -1,6 +1,6 @@
-package dao;
+package kino.dao;
 
-import model.Employee;
+import kino.model.Employee;
 
 /**
  * Created by ronnilenvighansen on 16/03/2017.

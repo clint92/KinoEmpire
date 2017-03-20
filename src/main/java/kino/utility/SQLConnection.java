@@ -1,4 +1,4 @@
-package utility;
+package kino.utility;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
