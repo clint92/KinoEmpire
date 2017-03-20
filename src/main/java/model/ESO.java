@@ -11,7 +11,8 @@ public class ESO {
 
 
     TicketSale ticketSale;
-    ArrayList<TicketSale> ticketSales = new ArrayList<>();
+    ArrayList<TicketSale> ticketSales1 = new ArrayList<>();
+    ArrayList<TicketSale> ticketSales2 = new ArrayList<>();
 
     public boolean isReserved(){
         if (ticketSale.getReserved() == 1){
@@ -27,13 +28,32 @@ public class ESO {
         return false;
     }
 
-    public ArrayList<TicketSale> generateTicket(int ticketNr){
+
+    public void generateTicketTheater1(int ticketNr, String movieName){
         Random r = new Random();
         for (int i = 0; i < ticketNr ; i++) {
-            TicketSale ticketSale = new TicketSale(r.nextInt(2),r.nextInt(2), 180);
-            ticketSales.add(ticketSale);
+            int row = r.nextInt(20) + 1;
+            int seat = r.nextInt(12) + 1;
+            for (int j = 0; j < ticketSales1.size() ; j++) {
+                if (ticketSales1.get(j).getRow() != row || ticketSales1.get(j).getSeat() != seat){
+                    this.ticketSale = new TicketSale(r.nextInt(2), r.nextInt(2), 180, movieName, seat, row, 2017);
+                    ticketSales1.add(ticketSale);
+                }
+            }
         }
-        return ticketSales;
     }
 
+    public void generateTicketTheater2(int ticketNr, String movieName) {
+        Random r = new Random();
+        for (int i = 0; i < ticketNr ; i++) {
+            int row = r.nextInt(25) + 1;
+            int seat = r.nextInt(16) + 1;
+            for (int j = 0; j < ticketSales2.size() ; j++) {
+                if (ticketSales2.get(j).getRow() != row || ticketSales2.get(j).getSeat() != seat){
+                    this.ticketSale = new TicketSale(r.nextInt(2), r.nextInt(2), 180, movieName, seat, row, 2017);
+                    ticketSales2.add(ticketSale);
+                }
+            }
+        }
+    }
 }
