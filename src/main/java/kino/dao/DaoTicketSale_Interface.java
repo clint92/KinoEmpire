@@ -1,6 +1,7 @@
-package dao;
+package kino.dao;
 
-import model.TicketSale;
+
+import kino.model.TicketSale;
 import sun.security.krb5.internal.Ticket;
 
 /**

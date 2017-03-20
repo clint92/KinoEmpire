@@ -1,5 +1,5 @@
 
-import dao.DaoTicketSale;
+import kino.dao.DaoTicketSale;
 import kino.dao.EmployeeDao;
 import kino.model.TicketSale;
 
