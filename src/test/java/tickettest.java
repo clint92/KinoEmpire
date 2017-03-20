@@ -1,4 +1,4 @@
-import model.ESO;
+import kino.model.ESO;
 
 /**
  * Created by Ahmed Fadhel on 17-03-2017.

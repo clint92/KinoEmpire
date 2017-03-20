@@ -1,4 +1,4 @@
-package model;
+package kino.model;
 
 
 import java.time.LocalDateTime;
@@ -18,7 +18,7 @@ public class Schedule {
     private String formatDateTime = dateTime();
     Theater theater;
     Movie movie;
-    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(movie.getLength()); // needs a int inside the parameter
+    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(movie.getMovieLength()); // needs a int inside the parameter
 
 
 
@@ -38,7 +38,7 @@ public class Schedule {
         final Runnable playMovie = new Runnable() {
             @Override
             public void run() {
-                System.out.println(movie.getName() + " is playing for, "+movie.getLength()+ " minutes, in theater "+theater.getTheaterNumber());
+                System.out.println(movie.getMovieName() + " is playing for, "+movie.getMovieLength()+ " minutes, in theater "+theater.getTheaterNumber());
             }
         };
         final ScheduledFuture<?> playMovieHandler =
@@ -47,7 +47,7 @@ public class Schedule {
             @Override
             public void run() {
                 playMovieHandler.cancel(true); }
-        }, movie.getLength(),SECONDS); // needs to calculate the right format of movie.getLength min or sec.
+        }, movie.getMovieLength(),SECONDS); // needs to calculate the right format of movie.getLength min or sec.
     }
 
     // the current date,time

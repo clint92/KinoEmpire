@@ -1,9 +1,9 @@
-package dao;
-import model.Movie;
+package kino.dao;
+import kino.model.Movie;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import utility.SQLConnection;
+import kino.utility.SQLConnection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
