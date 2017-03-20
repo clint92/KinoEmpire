@@ -19,7 +19,6 @@ import java.io.IOException;
 public class MainApp extends Application {
 
     private Stage primaryStage;
-    private AnchorPane rootLayout;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
 
 
@@ -38,18 +37,18 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-        initRootLayout();
+        initReservationMenu();
     }
 
-    public void initRootLayout() {
+    public void initReservationMenu() {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/ReservationMenu.fxml"));
-            rootLayout = loader.load();
+            AnchorPane reservationMenu = loader.load();
 
             // Show the scene containing the root layout.
-            Scene scene = new Scene(rootLayout);
+            Scene scene = new Scene(reservationMenu);
             primaryStage.setScene(scene);
             primaryStage.show();
 
