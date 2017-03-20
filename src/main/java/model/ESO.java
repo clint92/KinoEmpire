@@ -1,7 +1,5 @@
-package kino.model;
+package model;
 
-
-import model.TicketSale;
 
 import java.util.ArrayList;
 import java.util.Random;

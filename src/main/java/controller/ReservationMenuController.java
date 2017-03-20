@@ -1,6 +1,6 @@
-package kino.controller;
+package controller;
 
-import kino.MainApp;
+import MainApp;
 
 /**
  * @author samm0091

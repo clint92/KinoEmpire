@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kino.controller.ReservationMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationMenuController">
    <children>
       <TextField fx:id="phoneNumber" layoutX="14.0" layoutY="22.0" prefHeight="25.0" prefWidth="180.0" promptText="Enter phone Number" />
       <Button fx:id="findReservation" layoutX="207.0" layoutY="22.0" mnemonicParsing="false" onAction="#onFindReservationClicked" prefHeight="25.0" prefWidth="116.0" text="Find Reservation" />
