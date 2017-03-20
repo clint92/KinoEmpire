@@ -44,21 +44,10 @@ public class Ticket {
         this.sold = sold;
     }
 
-<<<<<<< HEAD
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "reserved=" + reserved +
-                ", sold=" + sold +
-                ", price=" + price +
-                '}';
-    }
-=======
     public String toString () {
 
         return "Ticket ID: " + id_ticket + "Reserved: " + reserved + "Sold: " + sold + "";
 
     }
 
->>>>>>> refs/remotes/origin/master
 }
