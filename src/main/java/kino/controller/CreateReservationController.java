@@ -5,8 +5,6 @@ import javafx.scene.control.ComboBox;
 import kino.MainApp;
 import kino.model.Movie;
 
-import java.net.URL;
-
 /**
  * @author samm0091
  * @version 17-03-2017.

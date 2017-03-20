@@ -10,7 +10,7 @@ public class Movie {
     int id;
     int date;
     int length;
-    Thread th;
+
 
     public Movie() {
 
@@ -27,8 +27,6 @@ public class Movie {
         this.id = id;
         this.date = date;
         this.length = length;
-        th = new Thread(); // make a new thread
-        th.start(); // start the move thread
     }
 
 
