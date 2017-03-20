@@ -14,15 +14,14 @@ public class EmployeeDao implements EmployeeDaoInterface {
         connection = SQLConnection.getConnection();
     }
 
-    public void createEmployee(String name, String username, int ID, String status, String password){
+    public void createEmployee(String name_employee, String username, String admin_status, String password){
         try{
             PreparedStatement prepstat = connection.prepareStatement(
-                    "INSERT INTO Employee(name, username, ID, status, password) VALUES (?,?,?,?,?)");
-            prepstat.setString(1, name);
+                    "INSERT INTO employee(name_employee, username, admin_status, password) VALUES (?,?,?,?)");
+            prepstat.setString(1, name_employee);
             prepstat.setString(2, username);
-            prepstat.setInt(3, ID);
-            prepstat.setString(4, status);
-            prepstat.setString(5, password);
+            prepstat.setString(3, admin_status);
+            prepstat.setString(4, password);
             prepstat.executeUpdate();
         }
         catch(SQLException ex){
@@ -30,10 +29,10 @@ public class EmployeeDao implements EmployeeDaoInterface {
         }
 
     }
-    public void deleteEmployee(int ID){
+    public void deleteEmployee(int id_employee){
         try {
-            PreparedStatement prepstat = connection.prepareStatement("DELETE FROM Employee WHERE ID = ?");
-            prepstat.setInt(1, ID);
+            PreparedStatement prepstat = connection.prepareStatement("DELETE FROM employee WHERE id_employee = ?");
+            prepstat.setInt(1, id_employee);
             prepstat.executeUpdate();
         }
         catch(SQLException ex){
@@ -42,12 +41,11 @@ public class EmployeeDao implements EmployeeDaoInterface {
     }
     public void updateEmployee(Employee employee){
         try {
-            PreparedStatement prepstat = connection.prepareStatement(("UPDATE Employee SET name = ?, username = ?, ID = ?, status = ?, password = ?"));
+            PreparedStatement prepstat = connection.prepareStatement(("UPDATE employee SET name_employee = ?, username = ?, admin_status = ?, password = ?"));
             prepstat.setString(1, employee.getName());
             prepstat.setString(2, employee.getUsername());
-            prepstat.setInt(3, employee.getID());
-            prepstat.setString(4, employee.getStatus());
-            prepstat.setString(5, employee.getPassword());
+            prepstat.setString(3, employee.getStatus());
+            prepstat.setString(4, employee.getPassword());
             prepstat.executeUpdate();
         }
         catch(SQLException ex){
