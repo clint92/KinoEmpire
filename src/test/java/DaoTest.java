@@ -1,5 +1,5 @@
 import dao.DaoTicket;
-import model.Ticket;
+import model.TicketSale;
 
 /**
  * Created by Dave on 17/03/2017.
@@ -10,11 +10,15 @@ public class DaoTest {
 
         DaoTicket daoTicket = new DaoTicket();
 
-        Ticket ticket = new Ticket();
+        TicketSale ticketSale = new TicketSale();
 
-        ticket = daoTicket.createTicket();
+        ticketSale.setPrice(666.0);
 
-        //System.out.println(daoTicket.createTicket(ticket));
+
+        daoTicket.createTicketParam(ticketSale, 2);
+
+
+        System.out.println(ticketSale);
     }
 
 }

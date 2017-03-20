@@ -1,7 +1,6 @@
 package model;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,30 +9,31 @@ import java.util.Random;
  */
 public class ESO {
 
-    Ticket ticket;
-    ArrayList<Ticket> tickets = new ArrayList<>();
+
+    TicketSale ticketSale;
+    ArrayList<TicketSale> ticketSales = new ArrayList<>();
 
     public boolean isReserved(){
-        if (ticket.getReserved() == 1){
+        if (ticketSale.getReserved() == 1){
             return true;
         }
         return false;
     }
 
     public boolean isSold(){
-        if (ticket.getSold() == 1){
+        if (ticketSale.getSold() == 1){
             return true;
         }
         return false;
     }
 
-    public ArrayList<Ticket> generateTicket(int ticketNr){
+    public ArrayList<TicketSale> generateTicket(int ticketNr){
         Random r = new Random();
         for (int i = 0; i < ticketNr ; i++) {
-            Ticket ticket = new Ticket(r.nextInt(2),r.nextInt(2), 180);
-            tickets.add(ticket);
+            TicketSale ticketSale = new TicketSale(r.nextInt(2),r.nextInt(2), 180);
+            ticketSales.add(ticketSale);
         }
-        return tickets;
+        return ticketSales;
     }
 
 }

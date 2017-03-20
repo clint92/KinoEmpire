@@ -1,11 +1,11 @@
 package dao;
 
+import model.TicketSale;
 import utility.SQLConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import model.Ticket;
 
 /**
  * Created by Dave on 17/03/2017.
@@ -18,65 +18,90 @@ public class DaoTicket {
         conn = SQLConnection.getConnection();
     }
 
-    /** creating Ticket object in Database, with String as parameter to check if sold or reserved */
-    public void createTicket(Ticket ticket, String sale) {
+    /** creating TicketSale object in Database, with int as parameter to check if sold or reserved */
+    public void createTicketParam(TicketSale ticketSale, int sale_status) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticket(price, sold, reserved) VALUES (?,?,?)");
+            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticket(price, sold, reserved, sale_date, movie_name, seat, row) VALUES (? ,? ,?, ?, ?, ?, ?)");
 
-            if (sale.equalsIgnoreCase("sold")) {
-                prepStat.setDouble(1, ticket.getPrice());
-                prepStat.setInt(1, 1);
-                prepStat.setInt(1, ticket.getReserved());
+            if (sale_status == 0) {
+                prepStat.setDouble(1, ticketSale.getPrice());
+                prepStat.setInt(2, 1);
+                prepStat.setInt(3, ticketSale.getReserved());
+
             }
-            else if (sale.equalsIgnoreCase("reserved")) {
-                prepStat.setDouble(1, ticket.getPrice());
-                prepStat.setInt(1, ticket.getSold());
-                prepStat.setInt(1, 1);
+            else if (sale_status == 1) {
+                prepStat.setDouble(1, ticketSale.getPrice());
+                prepStat.setInt(2, ticketSale.getSold());
+                prepStat.setInt(3, 1);
             }
-        }
-        catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-    
-    /** create Ticket object with sold field set to 1 */
-    public void createSoldTicket(Ticket ticket) {
-
-        try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticket(price, sold, reserved) VALUES (?,?,?)");
-
-            prepStat.setDouble(1, ticket.getPrice());
-            prepStat.setInt(1, 1);
-            prepStat.setInt(1, ticket.getReserved());
+            else {
+                throw new IllegalArgumentException("Error in parameter, must be 0 or 1");
+            }
+            prepStat.executeUpdate();
         }
         catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
-    /** create Ticket object with reserved field set to 1 */
-    public void createReservedTicket(Ticket ticket) {
+    /** Create TicketSale object in Database */
+    public void createTicket(TicketSale ticketSale) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticket(price, sold, reserved) VALUES (?,?,?)");
+            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticket(price, sold, reserved, sale_date, movie_name, seat, row) VALUES (? ,? ,?, ?, ?, ?, ?)");
 
-            prepStat.setDouble(1, ticket.getPrice());
-            prepStat.setInt(1, ticket.getSold());
-            prepStat.setInt(1, 1);
+            prepStat.setDouble(1, ticketSale.getPrice());
+            prepStat.setInt(2, ticketSale.getSold());
+            prepStat.setInt(3, ticketSale.getReserved());
+            prepStat.executeUpdate();
+
+
         }
         catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
 
-    /** removing Ticket object from database, checking by id_ticket */
-    public void removeTicket(int id_ticket) {
+
+    /** Update TicketSale object in Database */
+    public void updateTicket(TicketSale ticketSale) {
+        try {
+            PreparedStatement prepStat = conn.prepareStatement("UPDATE ticket SET price = ?, sold = ?, reserved = ?" + "WHERE ticket_id = ?");
+
+            prepStat.setDouble(1, ticketSale.getPrice());
+            prepStat.setInt(2, ticketSale.getSold());
+            prepStat.setInt(3, ticketSale.getReserved());
+            prepStat.setInt(4, ticketSale.getId_ticketSale());
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /** Reads TicketSale object from Database */
+    public void getTicket(int id_ticketSale) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("DELETE FROM ticket WHERE id_ticket = ?");
+            PreparedStatement prepStat = conn.prepareStatement("SELECT FROM ticket WHERE id_ticketSale = ? ");
 
-            prepStat.setInt(1, id_ticket);
+            prepStat.setInt(1, id_ticketSale);
+            prepStat.executeUpdate();
+
+            TicketSale ticketSale = new TicketSale();
+        }
+        catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /** Delete TicketSale object from database, checking by id_ticket */
+    public void removeTicket(int id_ticketSale) {
+
+        try {
+            PreparedStatement prepStat = conn.prepareStatement("DELETE FROM ticket WHERE id_ticketSale = ? ");
+
+            prepStat.setInt(1, id_ticketSale);
             prepStat.executeUpdate();
         }
         catch (SQLException ex) {
