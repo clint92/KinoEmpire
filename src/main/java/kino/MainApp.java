@@ -1,4 +1,7 @@
-package kino;
+package kino; /**
+ * @author samm0091
+ * @version 16-03-2017.
+ */
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
