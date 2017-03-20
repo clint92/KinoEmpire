@@ -1,7 +1,7 @@
-package dao;
+package kino.dao;
 
-import model.TicketSale;
-import utility.SQLConnection;
+import kino.model.TicketSale;
+import kino.utility.SQLConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

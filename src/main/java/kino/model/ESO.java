@@ -1,4 +1,4 @@
-package model;
+package kino.model;
 
 
 import java.util.ArrayList;

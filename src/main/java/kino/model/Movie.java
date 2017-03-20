@@ -1,9 +1,10 @@
-package model;
+package kino.model;
 
 /**
  * Created by Ali on 14-03-2017.
  */
 public class Movie {
+
     String movieGenre = "";
     String movieName = "";
     int movieAge;
@@ -13,6 +14,10 @@ public class Movie {
 
     public Movie(){
 
+    }
+
+    public Movie(String movieName) {
+        this.movieName = movieName;
     }
 
     public Movie(String movieGenre, String movieName, int movieAge, int movieId, int movieDate, int movieLength) {
@@ -75,8 +80,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "movieClass{" +
-                "genre='" + movieGenre + '\'' + ", name='" + movieName + '\'' + ", age=" + movieAge +
-                ", id=" + movieId + ", date=" + movieDate + ", length=" + movieLength + '}';
+        return this.movieName;
     }
 }

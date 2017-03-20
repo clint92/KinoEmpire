@@ -1,4 +1,4 @@
-package model;
+package kino.model;
 
 /**
  * Created by Ahmed Fadhel on 14-03-2017.
@@ -10,10 +10,9 @@ public class Employee {
     String status;
     String password;
 
-    public Employee(String name, String username, int ID, String status, String password) {
+    public Employee(String name, String username, String status, String password) {
         this.name = name;
         this.username = username;
-        this.ID = ID;
         this.status = status;
         this.password = password;
     }

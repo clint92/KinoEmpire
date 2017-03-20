@@ -1,5 +1,5 @@
-package dao;
-import model.Movie;
+package kino.dao;
+import kino.model.Movie;
 
 import java.util.List;
 
