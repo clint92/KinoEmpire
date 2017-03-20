@@ -1,23 +1,22 @@
-/*package model;
-
-import java.time.LocalDateTime;
+package kino.model;
+/*import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 
 import static java.util.concurrent.TimeUnit.*;
-
+*/
 /**
  * Created by Martin H on 16-03-2017.
  */
 
 
-/*public class Schedule {
-    private String formatDateTime = dateTime();
+public class Schedule {
+   /* private String formatDateTime = dateTime();
     Theater theater;
     Movie movie;
-    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(movie.getLength()); // needs a int inside the parameter
+    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(movie.getMovieLength()); // needs a int inside the parameter
 
 
 
@@ -37,7 +36,7 @@ import static java.util.concurrent.TimeUnit.*;
         final Runnable playMovie = new Runnable() {
             @Override
             public void run() {
-                System.out.println(movie.getName() + " is playing for, "+movie.getLength()+ " minutes, in theater "+theater.getTheaterNumber());
+                System.out.println(movie.getMovieName() + " is playing for, "+movie.getMovieLength()+ " minutes, in theater "+theater.getTheaterNumber());
             }
         };
         final ScheduledFuture<?> playMovieHandler =
@@ -46,7 +45,7 @@ import static java.util.concurrent.TimeUnit.*;
             @Override
             public void run() {
                 playMovieHandler.cancel(true); }
-        }, movie.getLength(),SECONDS); // needs to calculate the right format of movie.getLength min or sec.
+        }, movie.getMovieLength(),SECONDS); // needs to calculate the right format of movie.getLength min or sec.
     }
 
     // the current date,time
@@ -63,5 +62,5 @@ import static java.util.concurrent.TimeUnit.*;
     public void setFormatDateTime(String formatDateTime) {
         this.formatDateTime = formatDateTime;
     }
+    */
 }
-*/
