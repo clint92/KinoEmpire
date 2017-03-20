@@ -1,4 +1,4 @@
-package dao;
+package kino.dao;
 
 /**
  * @author samm0091

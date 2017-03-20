@@ -1,4 +1,4 @@
-package controller; /**
+package kino; /**
  * @author samm0091
  * @version 16-03-2017.
  */
@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import kino.controller.CreateReservationController;
+import kino.controller.ReservationMenuController;
 
 import java.io.IOException;
 
@@ -43,7 +45,7 @@ public class MainApp extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            // Give the controller access to the main app.
+            // Give the kino.controller access to the main app.
             ReservationMenuController controller = loader.getController();
             controller.setMainApp(this);
         } catch (IOException e) {
@@ -63,7 +65,7 @@ public class MainApp extends Application {
             newStage.setScene(scene);
             newStage.show();
 
-            // Give the controller access to the main app.
+            // Give the kino.controller access to the main app.
             CreateReservationController controller = loader.getController();
             controller.setMainApp(this);
 

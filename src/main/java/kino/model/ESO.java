@@ -1,11 +1,11 @@
-package model;
+package kino.model;
 
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import static utility.SQLConnection.getConnection;
+import static kino.utility.SQLConnection.getConnection;
 
 
 /**

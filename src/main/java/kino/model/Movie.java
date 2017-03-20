@@ -1,4 +1,4 @@
-package model;
+package kino.model;
 
 /**
  * Created by Ali on 14-03-2017.
