@@ -17,7 +17,7 @@
       <ComboBox fx:id="personSeats" layoutX="7.0" layoutY="53.0" prefHeight="25.0" prefWidth="87.0" promptText="Person" />
       <TableView layoutX="212.0" layoutY="10.0" prefHeight="274.0" prefWidth="165.0">
         <columns>
-          <TableColumn prefWidth="165.0" text="Time" />
+          <TableColumn fx:id="screeningTime" prefWidth="165.0" text="Time" />
         </columns>
       </TableView>
       <ComboBox fx:id="screeningDate" layoutX="7.0" layoutY="105.0" prefHeight="25.0" prefWidth="87.0" promptText="Date" />
