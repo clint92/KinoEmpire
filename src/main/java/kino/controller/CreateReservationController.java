@@ -15,6 +15,8 @@ public class CreateReservationController {
     ComboBox<Movie> movieList;
     @FXML
     ComboBox<String> personSeats;
+    @FXML
+    ComboBox<String> screeningDate;
     public MainApp mainApp;
 
     public CreateReservationController() {
@@ -32,7 +34,8 @@ public class CreateReservationController {
     public void initialize() {
         personSeats.getItems().removeAll(personSeats.getItems());
         personSeats.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8");
-
+        screeningDate.getItems().addAll("21-03");
     }
+
 
 }
