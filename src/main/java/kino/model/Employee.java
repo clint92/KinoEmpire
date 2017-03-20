@@ -10,10 +10,9 @@ public class Employee {
     String status;
     String password;
 
-    public Employee(String name, String username, int ID, String status, String password) {
+    public Employee(String name, String username, String status, String password) {
         this.name = name;
         this.username = username;
-        this.ID = ID;
         this.status = status;
         this.password = password;
     }

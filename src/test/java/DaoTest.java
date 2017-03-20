@@ -1,5 +1,8 @@
-import kino.dao.DaoTicket;
+
+import kino.dao.DaoTicketSale;
+import kino.dao.EmployeeDao;
 import kino.model.TicketSale;
+
 
 /**
  * Created by Dave on 17/03/2017.
@@ -8,15 +11,18 @@ public class DaoTest {
 
     public static void main(String[] args) {
 
-        DaoTicket daoTicket = new DaoTicket();
+        DaoTicketSale daoTicketSale = new DaoTicketSale();
 
         TicketSale ticketSale = new TicketSale();
 
-        ticketSale.setPrice(666.0);
+        ticketSale.setPrice(123.0);
 
 
-        daoTicket.createTicketParam(ticketSale, 2);
+        daoTicketSale.createTicketSaleParam(ticketSale, 0);
 
+        EmployeeDao empDao = new EmployeeDao();
+
+        empDao.createEmployee("sven", "ScooterSven69", "a", "fuckaf666");
 
         System.out.println(ticketSale);
     }
