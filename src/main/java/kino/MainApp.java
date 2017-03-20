@@ -1,13 +1,15 @@
-package controller; /**
- * @author samm0091
- * @version 16-03-2017.
- */
+package kino;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import kino.controller.CreateReservationController;
+import kino.controller.ReservationMenuController;
+import kino.model.Movie;
 
 import java.io.IOException;
 
@@ -15,10 +17,16 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private AnchorPane rootLayout;
+    private ObservableList<Movie> movieList = FXCollections.observableArrayList();
 
 
     public MainApp() {
+        movieList.add(new Movie("Ali G"));
+        movieList.add(new Movie("Ali G in da house"));
+    }
 
+    public ObservableList<Movie> getMovieList() {
+        return movieList;
     }
 
     @Override
@@ -43,13 +51,15 @@ public class MainApp extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            // Give the controller access to the main app.
+            // Give the kino.controller access to the main app.
             ReservationMenuController controller = loader.getController();
             controller.setMainApp(this);
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public void showCreateReservationMenu() {
         try {
             // Load person overview.
@@ -63,11 +73,12 @@ public class MainApp extends Application {
             newStage.setScene(scene);
             newStage.show();
 
-            // Give the controller access to the main app.
+            // Give the kino.controller access to the main app.
             CreateReservationController controller = loader.getController();
             controller.setMainApp(this);
 
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }

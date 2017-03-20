@@ -1,4 +1,6 @@
-package controller;
+package kino.controller;
+
+import kino.MainApp;
 
 /**
  * @author samm0091
@@ -10,10 +12,6 @@ public class ReservationMenuController {
 
     public ReservationMenuController() {
 
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
     }
 
 
@@ -31,5 +29,9 @@ public class ReservationMenuController {
 
     public void onFindReservationClicked() {
 
+    }
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
     }
 }

@@ -1,4 +1,4 @@
-package model;
+package kino.model;
 
 /**
  * Created by Ali on 14-03-2017.
@@ -11,6 +11,14 @@ public class Movie {
     int date;
     int length;
     Thread th;
+
+    public Movie() {
+
+    }
+
+    public Movie(String name) {
+        this.name = name;
+    }
 
     public Movie(String genre, String name, int age, int id, int date, int length) {
         this.genre = genre;
@@ -74,8 +82,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "movieClass{" +
-                "genre='" + genre + '\'' + ", name='" + name + '\'' + ", age=" + age + ", id=" + id + ", date=" + date + ", length=" + length +
-                '}';
+        return this.name;
     }
 }
