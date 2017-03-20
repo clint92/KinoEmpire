@@ -13,7 +13,7 @@ public class SQLConnection {
     private static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private static final String DB_USER = "sql11163745";
     private static final String DB_PASSWORD = "RuWhCUG8xz";
-    private static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net";
+    private static final String DB_URL = "jdbc:mysql://sql11.freemysqlhosting.net/sql11163745";
 
     private static Connection connection = null;
 
@@ -22,6 +22,7 @@ public class SQLConnection {
 
         if (connection != null) {
           return connection;
+
         }
         else {
             try {

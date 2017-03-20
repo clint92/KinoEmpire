@@ -4,82 +4,78 @@ package kino.model;
  * Created by Ali on 14-03-2017.
  */
 public class Movie {
-    String genre = "";
-    String name = "";
-    int age;
-    int id;
-    int date;
-    int length;
 
+    String movieGenre = "";
+    String movieName = "";
+    int movieAge;
+    int movieId;
+    int movieDate;
+    int movieLength;
 
-    public Movie() {
+    public Movie(){
 
     }
 
-    public Movie(String name) {
-        this.name = name;
-    }
-
-    public Movie(String genre, String name, int age, int id, int date, int length) {
-        this.genre = genre;
-        this.name = name;
-        this.age = age;
-        this.id = id;
-        this.date = date;
-        this.length = length;
+    public Movie(String movieGenre, String movieName, int movieAge, int movieId, int movieDate, int movieLength) {
+        this.movieGenre = movieGenre;
+        this.movieName = movieName;
+        this.movieAge = movieAge;
+        this.movieId = movieId;
+        this.movieDate = movieDate;
+        this.movieLength = movieLength;
     }
 
 
-    public String getGenre() {
-        return genre;
+    public String getMovieGenre() {
+        return movieGenre;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setMovieGenre(String movieGenre) {
+        this.movieGenre = movieGenre;
     }
 
-    public String getName() {
-        return name;
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
-    public int getAge() {
-        return age;
+    public int getMovieAge() {
+        return movieAge;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setMovieAge(int movieAge) {
+        this.movieAge = movieAge;
     }
 
-    public int getId() {
-        return id;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
-    public int getDate() {
-        return date;
+    public int getMovieDate() {
+        return movieDate;
     }
 
-    public void setDate(int dato) {
-        this.date = dato;
+    public void setMovieDate(int movieDate) {
+        this.movieDate = movieDate;
     }
 
-    public int getLength() {
-        return length;
+    public int getMovieLength() {
+        return movieLength;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setMovieLength(int movieLength) {
+        this.movieLength = movieLength;
     }
 
     @Override
     public String toString() {
-        return this.name;
+        return this.movieName;
     }
 }
