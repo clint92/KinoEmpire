@@ -16,17 +16,16 @@ public class MovieDao implements MovieDaoInterface {
     public MovieDao(){
         connection = SQLConnection.getConnection();
     }
-    public void createMovie(String movieGenre, String movieName, int movieAge, int movieId, String moviePassword, int movieDate, int movieLength){
+    public void createMovie(String movieGenre, String movieName, int movieAge, int movieId, int movieDate, int movieLength){
         try{
             PreparedStatement prepstat = connection.prepareStatement(
-                    "INSERT INTO movie(movieGenre, movieName, movieage, movieId, moviePassword, movieDate, movieLength) VALUES (?,?,?,?,?,?,?)");
+                    "INSERT INTO movie(movieGenre, movieName, movieage, movieId, movieDate, movieLength) VALUES (?,?,?,?,?,?,?)");
             prepstat.setString(1, movieGenre);
             prepstat.setString(2, movieName);
             prepstat.setInt(3, movieAge);
             prepstat.setInt(4, movieId);
-            prepstat.setString(5, moviePassword);
-            prepstat.setInt(6, movieDate);
-            prepstat.setInt(7, movieLength);
+            prepstat.setInt(5, movieDate);
+            prepstat.setInt(6, movieLength);
             prepstat.executeUpdate();
         }
         catch(SQLException ex){

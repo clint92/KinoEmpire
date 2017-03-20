@@ -1,5 +1,4 @@
-package model;
-
+/*package model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +13,7 @@ import static java.util.concurrent.TimeUnit.*;
  */
 
 
-public class Schedule {
+/*public class Schedule {
     private String formatDateTime = dateTime();
     Theater theater;
     Movie movie;
@@ -65,3 +64,4 @@ public class Schedule {
         this.formatDateTime = formatDateTime;
     }
 }
+*/
