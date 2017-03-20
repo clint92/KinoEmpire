@@ -16,7 +16,7 @@
       <Button layoutX="7.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Create" />
       <ScrollPane layoutX="279.0" layoutY="15.0" />
       <ComboBox fx:id="movieList" layoutX="7.0" layoutY="11.0" prefHeight="25.0" prefWidth="192.0" promptText="Choose Movie" />
-      <ComboBox layoutX="7.0" layoutY="53.0" prefHeight="25.0" prefWidth="80.0" promptText="Person" />
+      <ComboBox fx:id="personSeats" layoutX="7.0" layoutY="53.0" prefHeight="25.0" prefWidth="80.0" promptText="Person" />
       <TableView layoutX="208.0" layoutY="10.0" prefHeight="274.0" prefWidth="296.0">
         <columns>
           <TableColumn prefWidth="148.0" text="Date" />

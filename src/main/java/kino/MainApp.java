@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import kino.controller.CreateReservationController;
@@ -26,6 +27,7 @@ public class MainApp extends Application {
     public MainApp() {
         movieList.add(new Movie("Ali G"));
         movieList.add(new Movie("Ali G in da house"));
+
     }
 
     public ObservableList<Movie> getMovieList() {
@@ -57,8 +59,7 @@ public class MainApp extends Application {
             // Give the kino.controller access to the main app.
             ReservationMenuController controller = loader.getController();
             controller.setMainApp(this);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -80,8 +81,7 @@ public class MainApp extends Application {
             CreateReservationController controller = loader.getController();
             controller.setMainApp(this);
 
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

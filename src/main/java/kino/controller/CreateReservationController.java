@@ -5,6 +5,8 @@ import javafx.scene.control.ComboBox;
 import kino.MainApp;
 import kino.model.Movie;
 
+import java.net.URL;
+
 /**
  * @author samm0091
  * @version 17-03-2017.
@@ -13,7 +15,8 @@ public class CreateReservationController {
 
     @FXML
     ComboBox<Movie> movieList;
-
+    @FXML
+    ComboBox<String> personSeats;
     public MainApp mainApp;
 
     public CreateReservationController() {
@@ -27,6 +30,11 @@ public class CreateReservationController {
         this.mainApp = mainApp;
 
         movieList.setItems(mainApp.getMovieList());
+    }
+    public void initialize() {
+        personSeats.getItems().removeAll(personSeats.getItems());
+        personSeats.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8");
+
     }
 
 }
