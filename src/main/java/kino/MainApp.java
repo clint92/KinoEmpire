@@ -42,7 +42,11 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
+
+
+
         loginMenu();
+
     }
 
     public void showReservationMenu() {
