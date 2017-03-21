@@ -1,6 +1,7 @@
 package kino.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import kino.MainApp;
 import kino.model.Movie;
@@ -17,21 +18,26 @@ public class CreateReservationController {
     ComboBox<String> personSeats;
     @FXML
     ComboBox<String> screeningDate;
+    @FXML
+    Button chooseSeatsButton;
 
-    public MainApp mainApp;
+    private MainApp mainApp;
 
     public CreateReservationController() {
 
     }
 
-    public void showMovieList(Movie movie) {
-
+    public void onChooseSeatsClicked() {
+        this.mainApp.showSeatsSmallTheater();
     }
+
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
 
         movieList.setItems(mainApp.getMovieList());
     }
+
+    // will be executed when fxml file is loaded
     public void initialize() {
         personSeats.getItems().removeAll(personSeats.getItems());
         personSeats.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8");
