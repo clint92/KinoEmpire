@@ -2,6 +2,7 @@ package kino.controller;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -52,6 +53,18 @@ public class EditMovieMenuController {
     }
 
     public void onDeleteClicked() {
+        int selectedIndex = movieTable.getSelectionModel().getSelectedIndex();
+        if (selectedIndex >= 0) {
+            movieTable.getItems().remove(selectedIndex);
+        }
+        else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Movie Selected");
+            alert.setContentText("Please select a movie in the table.");
 
+            alert.showAndWait();
+        }
     }
 }
