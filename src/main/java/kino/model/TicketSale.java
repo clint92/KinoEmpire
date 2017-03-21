@@ -12,9 +12,9 @@ public class TicketSale {
     String movie_name;
     int seat;
     int row;
-    int sale_date;
+    String sale_date;
 
-    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, int sale_date) {
+    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, String sale_date) {
         this.reserved = reserved;
         this.sold = sold;
         this.price = price;
@@ -90,11 +90,11 @@ public class TicketSale {
         this.row = row;
     }
 
-    public int getSale_date() {
+    public String getSale_date() {
         return sale_date;
     }
 
-    public void setSale_date(int sale_date) {
+    public void setSale_date(String sale_date) {
         this.sale_date = sale_date;
     }
 
