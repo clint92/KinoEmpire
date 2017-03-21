@@ -38,10 +38,10 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-        initReservationMenu();
+        showReservationMenu();
     }
 
-    public void initReservationMenu() {
+    public void showReservationMenu() {
         try {
             // Load ReservationMenu
             FXMLLoader loader = new FXMLLoader();

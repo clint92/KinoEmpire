@@ -20,12 +20,19 @@ public class CreateReservationController {
     ComboBox<String> screeningDate;
     @FXML
     Button chooseSeatsButton;
+    @FXML
+    Button cancelButton;
 
     private MainApp mainApp;
 
     public CreateReservationController() {
 
     }
+
+    public void onCancelButtonClicked() {
+        this.mainApp.showReservationMenu();
+    }
+
 
     public void onChooseSeatsClicked() {
         this.mainApp.showSeatsSmallTheater();
