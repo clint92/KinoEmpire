@@ -16,15 +16,14 @@ import kino.model.Login;
 public class LoginController {
 
     @FXML
-    TextField username;
+    private TextField username;
     @FXML
-    TextField password;
+    private TextField password;
     @FXML
-    Text incorret;
+    private Text incorrect;
 
     private MainApp mainApp;
-
-    Login L = new Login();
+    private Login L = new Login();
 
     public void loginOK (ActionEvent event)
     {
@@ -37,7 +36,7 @@ public class LoginController {
         else{
             username.clear();
             password.clear();
-            incorret.setVisible(true);
+            incorrect.setVisible(true);
 
         }
     }

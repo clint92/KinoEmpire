@@ -15,13 +15,13 @@ import kino.model.Movie;
 public class EditMovieMenuController {
 
     @FXML
-    TableView<Movie> movieTable;
+    private TableView<Movie> movieTable;
     @FXML
-    TableColumn<Movie, String> movieColumn;
+    private TableColumn<Movie, String> movieColumn;
     @FXML
-    TextField movieName;
+    private TextField movieName;
     @FXML
-    TextField movieGenre;
+    private TextField movieGenre;
 
     private MainApp mainApp;
 
