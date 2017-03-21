@@ -12,9 +12,10 @@ public class TicketSale {
     String movie_name;
     int seat;
     int row;
-    int sale_date;
+    String sale_date;
+    int phone_number;
 
-    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, int sale_date) {
+    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, String sale_date, int phone_number) {
         this.reserved = reserved;
         this.sold = sold;
         this.price = price;
@@ -22,6 +23,7 @@ public class TicketSale {
         this.seat = seat;
         this.row = row;
         this.sale_date = sale_date;
+        this.phone_number = phone_number;
     }
 
     public TicketSale() {
@@ -90,17 +92,26 @@ public class TicketSale {
         this.row = row;
     }
 
-    public int getSale_date() {
+    public String getSale_date() {
         return sale_date;
     }
 
-    public void setSale_date(int sale_date) {
+    public void setSale_date(String sale_date) {
         this.sale_date = sale_date;
+    }
+
+    public int getPhone_number() {
+        return this.phone_number;
+    }
+
+    public void setPhone_number(int phone_number) {
+        this.phone_number = phone_number;
     }
 
     public String toString () {
 
-        return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved + " Sold: " + sold + " Price: " + price + "";
+        return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved +
+                " Sold: " + sold + " Price: " + price + " Movie: " + movie_name + " Screening Date: " + sale_date + " Phone Number: " + phone_number;
 
     }
 

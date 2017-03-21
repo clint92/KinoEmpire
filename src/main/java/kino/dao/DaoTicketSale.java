@@ -29,7 +29,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
                 prepStat.setDouble(1, ticketSale.getPrice());
                 prepStat.setInt(2, 1);
                 prepStat.setInt(3, ticketSale.getReserved());
-                prepStat.setInt(4, ticketSale.getSale_date());
+                prepStat.setString(4, ticketSale.getSale_date());
                 prepStat.setString(5, ticketSale.getMovie_name());
                 prepStat.setInt(6, ticketSale.getSeat());
                 prepStat.setInt(7, ticketSale.getRow());
@@ -39,7 +39,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
                 prepStat.setDouble(1, ticketSale.getPrice());
                 prepStat.setInt(2, ticketSale.getSold());
                 prepStat.setInt(3, 1);
-                prepStat.setInt(4, ticketSale.getSale_date());
+                prepStat.setString(4, ticketSale.getSale_date());
                 prepStat.setString(5, ticketSale.getMovie_name());
                 prepStat.setInt(6, ticketSale.getSeat());
                 prepStat.setInt(7, ticketSale.getRow());
@@ -63,7 +63,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
             prepStat.setInt(3, ticketSale.getReserved());
-            prepStat.setInt(4, ticketSale.getSale_date());
+            prepStat.setString(4, ticketSale.getSale_date());
             prepStat.setString(5, ticketSale.getMovie_name());
             prepStat.setInt(6, ticketSale.getSeat());
             prepStat.setInt(7, ticketSale.getRow());
@@ -100,7 +100,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
             prepStat.setInt(3, ticketSale.getReserved());
-            prepStat.setInt(4, ticketSale.getSale_date());
+            prepStat.setString(4, ticketSale.getSale_date());
             prepStat.setString(5, ticketSale.getMovie_name());
             prepStat.setInt(6, ticketSale.getSeat());
             prepStat.setInt(7, ticketSale.getRow());

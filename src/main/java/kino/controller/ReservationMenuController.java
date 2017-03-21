@@ -8,7 +8,7 @@ import kino.MainApp;
  */
 public class ReservationMenuController {
 
-    public MainApp mainApp;
+    private MainApp mainApp;
 
     public ReservationMenuController() {
 

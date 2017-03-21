@@ -16,16 +16,18 @@ public class MovieDao implements MovieDaoInterface {
     public MovieDao(){
         connection = SQLConnection.getConnection();
     }
-    public void createMovie(String movieGenre, String movieName, int movieAge, int movieId, int movieDate, int movieLength){
+    public void createMovie(String movieGenre, String movieName, int movieAge, String movieStartDate,
+                            String movieEndDate, int movieLength, int active){
         try{
             PreparedStatement prepstat = connection.prepareStatement(
-                    "INSERT INTO movie(movieGenre, movieName, movieage, movieId, movieDate, movieLength) VALUES (?,?,?,?,?,?,?)");
+                    "INSERT INTO movie(movieGenre, movieName, movieAge, movieStartDate, movieEndDate, movieLength, active) VALUES (?,?,?,?,?,?,?)");
             prepstat.setString(1, movieGenre);
             prepstat.setString(2, movieName);
             prepstat.setInt(3, movieAge);
-            prepstat.setInt(4, movieId);
-            prepstat.setInt(5, movieDate);
+            prepstat.setString(4, movieStartDate);
+            prepstat.setString(5, movieEndDate);
             prepstat.setInt(6, movieLength);
+            prepstat.setInt(7, active);
             prepstat.executeUpdate();
         }
         catch(SQLException ex){
@@ -46,13 +48,14 @@ public class MovieDao implements MovieDaoInterface {
     public void updateMovie(Movie movie){
         try {
             PreparedStatement prepstat = connection.prepareStatement(("UPDATE movie SET movieGenre = ?, movieName = ?, movieAge" +
-                    " = ?, movieId = ?, movieDate = ?, movieLength = ?"));
+                    " = ?, movieStartDate = ?, movieEndDate = ?, movieLength = ?, active = ?"));
             prepstat.setString(1, movie.getMovieGenre());
             prepstat.setString(2, movie.getMovieName());
             prepstat.setInt(3, movie.getMovieAge());
-            prepstat.setInt(4, movie.getMovieId());
-            prepstat.setInt(5, movie.getMovieDate());
+            prepstat.setString(4, movie.getMovieStartDate());
+            prepstat.setString(5, movie.getMovieEndDate());
             prepstat.setInt(6, movie.getMovieLength());
+            prepstat.setInt(7, movie.getActive());
             prepstat.executeUpdate();
         }
         catch(SQLException ex){
@@ -63,18 +66,20 @@ public class MovieDao implements MovieDaoInterface {
     public Movie getMovieById(int movieId) {
         Movie movie = new Movie();
         try {
-            PreparedStatement prepStat = connection.prepareStatement("SELECT * FROM movie WHERE movieId = ?");
-            prepStat.setInt(1, movieId);
-            ResultSet resultset = prepStat.executeQuery();
+            PreparedStatement prepstat = connection.prepareStatement("SELECT * FROM movie WHERE movieId = ?");
+            prepstat.setInt(1, movieId);
+            ResultSet resultset = prepstat.executeQuery();
 
             // Uses a resultset of data retrieved from database and puts it into an Product object
             if (resultset.next()) {
-                movie.setMovieGenre(resultset.getString("movieGenre"));
-                movie.setMovieName(resultset.getString("movieName"));
-                movie.setMovieAge(resultset.getInt("movieAge"));
-                movie.setMovieId(resultset.getInt("movieId"));
-                movie.setMovieDate(resultset.getInt("movieDate"));
-                movie.setMovieLength(resultset.getInt("movieLength"));
+                movie.setMovieGenre(resultset.getString(1));
+                movie.setMovieName(resultset.getString(2));
+                movie.setMovieAge(resultset.getInt(3));
+                movie.setMovieId(resultset.getInt(4));
+                movie.setMovieStartDate(resultset.getString(5));
+                movie.setMovieEndDate(resultset.getString(6));
+                movie.setMovieLength(resultset.getInt(7));
+                movie.setActive(resultset.getInt(8));
             }
         }
         catch (SQLException e){
@@ -88,21 +93,23 @@ public class MovieDao implements MovieDaoInterface {
 
     public List<Movie> getAllMovies() {
         List<Movie> movieList = new ArrayList<Movie>();
+        int count = 0;
         try {
-            Statement statement = connection.createStatement();
-            ResultSet resultset = statement.executeQuery("SELECT * FROM movie");
-            int count = 0;
-            // Loops through all entries in the database table and uses resultsets of data retrieved from database and puts it into an Product object
-            while (resultset.next()) {
+            PreparedStatement prepstat = connection.prepareStatement("SELECT * FROM movie");
+            ResultSet resultset = prepstat.executeQuery();
+
+            while (resultset.next()){
                 Movie movie = new Movie();
-                if (resultset.next()) {
-                    movie.setMovieGenre(resultset.getString("movieGenre"));
-                    movie.setMovieName(resultset.getString("movieName"));
-                    movie.setMovieAge(resultset.getInt("movieAge"));
-                    movie.setMovieId(resultset.getInt("movieId"));
-                    movie.setMovieDate(resultset.getInt("movieDate"));
-                    movie.setMovieLength(resultset.getInt("movieLength"));
-                }
+                movie.setMovieGenre(resultset.getString(1));
+                movie.setMovieName(resultset.getString(2));
+                movie.setMovieAge(resultset.getInt(3));
+                movie.setMovieId(resultset.getInt(4));
+                movie.setMovieStartDate(resultset.getString(5));
+                movie.setMovieEndDate(resultset.getString(6));
+                movie.setMovieLength(resultset.getInt(7));
+                movie.setActive(resultset.getInt(8));
+                movieList.add(count, movie);
+                count++;
             }
         }
         catch (SQLException e){
