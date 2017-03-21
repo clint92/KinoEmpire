@@ -171,7 +171,7 @@ public class MainApp extends Application {
 
     public void saveMovieToDB(Movie movie) {
         this.movieDao.createMovie(movie.getMovieGenre(), movie.getMovieName(),
-                0, null, null, 0, 0);
+                -1, null, null, -1, -1);
     }
 
     public static void main(String[] args) {
