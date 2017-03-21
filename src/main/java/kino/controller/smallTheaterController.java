@@ -17,6 +17,7 @@ public class SmallTheaterController {
     public SmallTheaterController() {
 
     }
+
     public void onA1Clicked() {
         A1.setFill(Color.GREEN);
     }
