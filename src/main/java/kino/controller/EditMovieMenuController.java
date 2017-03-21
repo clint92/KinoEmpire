@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import kino.MainApp;
 import kino.model.Movie;
 
@@ -17,6 +18,10 @@ public class EditMovieMenuController {
     TableView<Movie> movieTable;
     @FXML
     TableColumn<Movie, String> movieColumn;
+    @FXML
+    TextField movieName;
+    @FXML
+    TextField movieGenre;
 
     private MainApp mainApp;
 
@@ -39,7 +44,11 @@ public class EditMovieMenuController {
     }
 
     public void onAddClicked() {
+        Movie movie = new Movie(movieName.getText(), movieGenre.getText());
+        this.mainApp.getMovieList().add(movie);
 
+        //call method from main to store movie in DB
+        this.mainApp.saveMovieToDB(movie);
     }
 
     public void onDeleteClicked() {

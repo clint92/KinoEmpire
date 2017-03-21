@@ -37,7 +37,9 @@ public class CreateReservationController {
         ticketSale.setPrice(Double.parseDouble(price.getText()));
         ticketSale.setPhone_number(Integer.parseInt(phoneNumber.getText()));
         System.out.println(ticketSale);
-        this.mainApp.saveToDB(ticketSale);
+
+        // call method in main to store ticket in DB
+        this.mainApp.saveTicketToDB(ticketSale);
     }
 
     public void onCancelButtonClicked() {

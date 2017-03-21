@@ -7,10 +7,10 @@ public class Movie {
 
     private String movieGenre;
     private String movieName;
-    private int movieAge;
-    private int movieId;
     private String movieStartDate;
     private String movieEndDate;
+    private int movieAge;
+    private int movieId;
     private int movieLength;
     private int active;
 

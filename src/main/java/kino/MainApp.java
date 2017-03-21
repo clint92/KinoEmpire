@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import kino.controller.*;
 import kino.dao.DaoTicketSale;
+import kino.dao.MovieDao;
 import kino.model.Movie;
 import kino.model.TicketSale;
 
@@ -22,6 +23,7 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
     private DaoTicketSale daoTicketSale = new DaoTicketSale();
+    private MovieDao movieDao = new MovieDao();
 
 
     public MainApp() {
@@ -106,7 +108,8 @@ public class MainApp extends Application {
             LoginController controller = loader.getController();
             controller.setMainApp(this);
 
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -162,8 +165,13 @@ public class MainApp extends Application {
         }
     }
 
-    public void saveToDB(TicketSale ticketSale) {
+    public void saveTicketToDB(TicketSale ticketSale) {
         this.daoTicketSale.createTicketSale(ticketSale);
+    }
+
+    public void saveMovieToDB(Movie movie) {
+        this.movieDao.createMovie(movie.getMovieGenre(), movie.getMovieName(),
+                0, null, null, 0, 0);
     }
 
     public static void main(String[] args) {
