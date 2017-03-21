@@ -7,11 +7,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="293.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kino.controller.CreateReservationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="293.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kino.controller.CreateReservationController">
    <children>
       <TextField layoutX="7.0" layoutY="211.0" promptText="Phone Number" />
       <Button fx:id="chooseSeatsButton" layoutX="7.0" layoutY="158.0" mnemonicParsing="false" onAction="#onChooseSeatsClicked" text="Choose Seats" />
-      <Button layoutX="94.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Cancel" />
+      <Button fx:id="cancelButton" layoutX="94.0" layoutY="254.0" mnemonicParsing="false" onAction="#onCancelButtonClicked" prefHeight="25.0" prefWidth="80.0" text="Cancel" />
       <Button layoutX="7.0" layoutY="254.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Create" />
       <ComboBox fx:id="movieList" layoutX="7.0" layoutY="11.0" prefHeight="25.0" prefWidth="192.0" promptText="Choose Movie" />
       <ComboBox fx:id="personSeats" layoutX="7.0" layoutY="53.0" prefHeight="25.0" prefWidth="87.0" promptText="Person" />
