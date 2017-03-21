@@ -21,6 +21,7 @@ public class CreateReservationController {
     Button cancelButton;
     @FXML
     Button createTicket;
+
     private MainApp mainApp;
 
     public CreateReservationController() {
@@ -29,6 +30,7 @@ public class CreateReservationController {
     public void onCreateTicket() {
         TicketSale ticketSale = new TicketSale();
         ticketSale.setMovie_name(movieList.getSelectionModel().getSelectedItem().getMovieName());
+        ticketSale.setSale_date(screeningDate.getSelectionModel().getSelectedItem());
         System.out.println(ticketSale);
     }
 

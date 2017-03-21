@@ -95,7 +95,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Genre: " + getMovieGenre() + "\nName: " + getMovieName() + "\nAge: " + getMovieAge() + "\nId: "
+        return "Name: " + getMovieName() + "\nGenre: " + getMovieGenre() + "\nAge: " + getMovieAge() + "\nId: "
                 + getMovieId() + "\nStart Date: " + getMovieStartDate() + "\n End Date: " + getMovieEndDate() +
         "\nLength: " + getMovieLength();
     }
