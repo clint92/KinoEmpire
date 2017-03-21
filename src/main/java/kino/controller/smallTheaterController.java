@@ -4,10 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import kino.MainApp;
 
-/**
- * @author samm0091
- * @version 21-03-2017.
- */
 public class smallTheaterController {
 
     @FXML
