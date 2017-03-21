@@ -12,6 +12,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import kino.controller.CreateReservationController;
 import kino.controller.ReservationMenuController;
+<<<<<<< HEAD
+=======
+import kino.controller.loginController;
+>>>>>>> master
 import kino.controller.smallTheaterController;
 import kino.dao.DaoTicketSale;
 import kino.model.Movie;
@@ -41,7 +45,11 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
+<<<<<<< HEAD
         showReservationMenu();
+=======
+        loginMenu();
+>>>>>>> master
     }
 
     public void showReservationMenu() {
@@ -86,6 +94,31 @@ public class MainApp extends Application {
 
         }
         catch (IOException e) {
+<<<<<<< HEAD
+=======
+            e.printStackTrace();
+        }
+    }
+
+
+    public void loginMenu() {
+        try {
+            // Load person overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/view/Login.fxml"));
+            AnchorPane createReservation = loader.load();
+
+
+            Scene scene = new Scene(createReservation);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            // Give the kino.controller access to the main app.
+            loginController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+>>>>>>> master
             e.printStackTrace();
         }
     }
