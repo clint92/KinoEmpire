@@ -42,7 +42,7 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-        loginMenu();
+        showLoginMenu();
     }
 
     public void showReservationMenu() {
@@ -92,9 +92,9 @@ public class MainApp extends Application {
     }
 
 
-    public void loginMenu() {
+    public void showLoginMenu() {
         try {
-            // Load person overview.
+            // Load loginMenu overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/Login.fxml"));
             AnchorPane createReservation = loader.load();
@@ -104,7 +104,7 @@ public class MainApp extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            // Give the kino.controller access to the main app.
+            // Give the loginController access to the main app.
             loginController controller = loader.getController();
             controller.setMainApp(this);
 
