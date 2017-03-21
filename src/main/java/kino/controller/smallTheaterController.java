@@ -6,6 +6,10 @@ public class SmallTheaterController {
 
     private MainApp mainApp;
 
+    public SmallTheaterController() {
+
+    }
+
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }

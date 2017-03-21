@@ -15,13 +15,14 @@ import kino.model.Login;
  */
 public class LoginController {
 
-    public MainApp mainApp;
     @FXML
     TextField username;
     @FXML
     TextField password;
     @FXML
     Text incorret;
+
+    private MainApp mainApp;
 
     Login L = new Login();
 
