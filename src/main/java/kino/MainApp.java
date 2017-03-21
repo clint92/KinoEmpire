@@ -27,8 +27,8 @@ public class MainApp extends Application {
 
 
     public MainApp() {
-        movieList.add(new Movie("Ali G"));
-        movieList.add(new Movie("Ali G in da house"));
+        movieList.add(new Movie("Ali G", "Comedy"));
+        movieList.add(new Movie("Ali G in da house", "Romance"));
 
     }
 

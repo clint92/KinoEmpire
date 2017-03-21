@@ -18,8 +18,9 @@ public class Movie {
 
     }
 
-    public Movie(String movieName) {
+    public Movie(String movieName, String movieGenre) {
         this.movieName = movieName;
+        this.movieGenre = movieGenre;
     }
 
     public Movie(String movieGenre, String movieName, int movieAge, int movieId,
