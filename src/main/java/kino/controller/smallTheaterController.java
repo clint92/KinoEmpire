@@ -2,7 +2,7 @@ package kino.controller;
 
 import kino.MainApp;
 
-public class smallTheaterController {
+public class SmallTheaterController {
 
     private MainApp mainApp;
 
