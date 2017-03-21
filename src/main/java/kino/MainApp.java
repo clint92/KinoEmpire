@@ -98,11 +98,12 @@ public class MainApp extends Application {
             AnchorPane smallTheater = loader.load();
 
 
-            // new scene
+            // new Stage with new scene
+            Stage seatStage = new Stage();
             Scene scene = new Scene(smallTheater);
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("Small Theater");
-            primaryStage.show();
+            seatStage.setScene(scene);
+            seatStage.setTitle("Small Theater");
+            seatStage.show();
 
             // Give the smallTheaterController access to the main app.
             smallTheaterController controller = loader.getController();
