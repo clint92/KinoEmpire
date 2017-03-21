@@ -32,8 +32,7 @@ public class EditMovieMenuController {
 
     @FXML
     private void initialize() {
-        // Initialize the movie table with the movieColumn
-        // containing movie name
+        // Initialize the movieColumn containing movie name
         movieColumn.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getMovieName()));
     }
