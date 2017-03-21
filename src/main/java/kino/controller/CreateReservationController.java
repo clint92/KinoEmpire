@@ -44,7 +44,6 @@ public class CreateReservationController {
         this.mainApp.showReservationMenu();
     }
 
-
     public void onChooseSeatsClicked() {
         this.mainApp.showSeatsSmallTheater();
     }

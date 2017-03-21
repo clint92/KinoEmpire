@@ -9,8 +9,4 @@ public class smallTheaterController {
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
     }
-
-    public void onCancelClicked() {
-        this.mainApp.showCreateReservationMenu();
-    }
 }

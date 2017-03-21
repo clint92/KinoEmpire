@@ -23,7 +23,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
-    private DaoTicketSale daoTicketSale;
+    private DaoTicketSale daoTicketSale = new DaoTicketSale();
 
 
     public MainApp() {
@@ -117,7 +117,7 @@ public class MainApp extends Application {
     }
 
     public void saveToDB(TicketSale ticketSale) {
-        daoTicketSale.createTicketSale(ticketSale);
+        this.daoTicketSale.createTicketSale(ticketSale);
     }
 
     public static void main(String[] args) {
