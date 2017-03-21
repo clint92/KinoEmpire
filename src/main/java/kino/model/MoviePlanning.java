@@ -10,21 +10,30 @@ import java.util.List;
  */
 public class MoviePlanning {
 
+    MovieDao movieDao;
 
-
-    public void setMovieAsActive() {
-
-
+    public MoviePlanning() {
+        super();
+        movieDao = new MovieDao();
     }
 
-    public void setMovieAsInactive() {
+    public void setMovieAsActive(int movieID) {
 
+        Movie mov = movieDao.getMovieById(movieID);
 
+        movieDao.updateMovie(mov);
+        mov.setActive(1);
     }
 
+    public void setMovieAsInactive(int movieID) {
+
+        Movie mov = movieDao.getMovieById(movieID);
+
+        mov.setActive(0);
+    }
+
+    /** Get all movies from database sorted by active status, with parameters "active", "inactive". */
     public ArrayList<Movie> getMoviesByActive(String req) {
-
-        MovieDao movieDao = new MovieDao();
 
         List<Movie> listget = new ArrayList<>(movieDao.getAllMovies());
 
