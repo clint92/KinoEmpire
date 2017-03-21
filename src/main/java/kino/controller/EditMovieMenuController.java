@@ -61,8 +61,7 @@ public class EditMovieMenuController {
             // Nothing selected.
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("No Selection");
-            alert.setHeaderText("No Movie Selected");
-            alert.setContentText("Please select a movie in the table.");
+            alert.setHeaderText("Please select a movie in the table.");
 
             alert.showAndWait();
         }
