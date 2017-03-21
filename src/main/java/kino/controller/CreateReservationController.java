@@ -7,10 +7,6 @@ import kino.MainApp;
 import kino.model.Movie;
 import kino.model.TicketSale;
 
-/**
- * @author samm0091
- * @version 17-03-2017.
- */
 public class CreateReservationController {
 
     @FXML
