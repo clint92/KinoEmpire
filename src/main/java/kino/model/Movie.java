@@ -63,6 +63,10 @@ public class Movie {
         return movieId;
     }
 
+    public void setMovieId(int movieId){
+        this.movieId = movieId;
+    }
+
     public String getMovieStartDate() {
         return movieStartDate;
     }

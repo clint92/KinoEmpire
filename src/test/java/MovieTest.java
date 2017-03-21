@@ -9,7 +9,6 @@ public class MovieTest {
         MovieDao movieDao = new MovieDao();
         Movie movie = new Movie();
         movieDao.createMovie("hal", "hal", 1, "1", "1", 1, 1);
-        System.out.println(movieDao.getMovieById(1));
-        System.out.println(movieDao.getAllMovies());
+        System.out.println(movieDao.getMovieById(18));
     }
 }

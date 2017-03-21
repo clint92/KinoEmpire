@@ -67,18 +67,20 @@ public class MovieDao implements MovieDaoInterface {
         Movie movie = new Movie();
         try {
             PreparedStatement prepstat = connection.prepareStatement("SELECT * FROM movie WHERE movieId = ?");
-            prepstat.executeUpdate();
-            //prepStat.setInt(1, movieId);
-            //ResultSet resultset = prepStat.executeQuery();
+            prepstat.setInt(1, movieId);
+            ResultSet resultset = prepstat.executeQuery();
 
             // Uses a resultset of data retrieved from database and puts it into an Product object
-            /*if (resultset.next()) {
-                movie.setMovieGenre(resultset.getString("movieGenre"));
-                movie.setMovieName(resultset.getString("movieName"));
-                movie.setMovieAge(resultset.getInt("movieAge"));
-                movie.setMovieDate(resultset.getInt("movieDate"));
-                movie.setMovieLength(resultset.getInt("movieLength"));
-            }*/
+            if (resultset.next()) {
+                movie.setMovieGenre(resultset.getString(1));
+                movie.setMovieName(resultset.getString(2));
+                movie.setMovieAge(resultset.getInt(3));
+                movie.setMovieId(resultset.getInt(4));
+                movie.setMovieStartDate(resultset.getString(5));
+                movie.setMovieEndDate(resultset.getString(6));
+                movie.setMovieLength(resultset.getInt(7));
+                movie.setActive(resultset.getInt(8));
+            }
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -91,22 +93,23 @@ public class MovieDao implements MovieDaoInterface {
 
     public List<Movie> getAllMovies() {
         List<Movie> movieList = new ArrayList<Movie>();
+        int count = 0;
         try {
-            Statement statement = connection.createStatement();
-            ResultSet resultset = statement.executeQuery("SELECT * FROM movie");
-            int count = 0;
-            // Loops through all entries in the database table and uses resultsets of data retrieved from database and puts it into an Product object
-            while (resultset.next()) {
+            PreparedStatement prepstat = connection.prepareStatement("SELECT * FROM movie");
+            ResultSet resultset = prepstat.executeQuery();
+
+            while (resultset.next()){
                 Movie movie = new Movie();
-                if (resultset.next()) {
-                    movie.setMovieGenre(resultset.getString("movieGenre"));
-                    movie.setMovieName(resultset.getString("movieName"));
-                    movie.setMovieAge(resultset.getInt("movieAge"));
-                    movie.setMovieStartDate(resultset.getString("movieStartDate"));
-                    movie.setMovieEndDate(resultset.getString("movieEndDate"));
-                    movie.setMovieLength(resultset.getInt("movieLength"));
-                    movie.setActive(resultset.getInt("active"));
-                }
+                movie.setMovieGenre(resultset.getString(1));
+                movie.setMovieName(resultset.getString(2));
+                movie.setMovieAge(resultset.getInt(3));
+                movie.setMovieId(resultset.getInt(4));
+                movie.setMovieStartDate(resultset.getString(5));
+                movie.setMovieEndDate(resultset.getString(6));
+                movie.setMovieLength(resultset.getInt(7));
+                movie.setActive(resultset.getInt(8));
+                movieList.add(count, movie);
+                count++;
             }
         }
         catch (SQLException e){
