@@ -71,7 +71,7 @@ public class MainApp extends Application {
             AnchorPane createReservation = loader.load();
 
 
-            // new stage with new scene
+            // new scene
             Scene scene = new Scene(createReservation);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Create Reservation");
@@ -95,7 +95,7 @@ public class MainApp extends Application {
             AnchorPane smallTheater = loader.load();
 
 
-            // new stage with new scene
+            // new scene
             Scene scene = new Scene(smallTheater);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Small Theater");
