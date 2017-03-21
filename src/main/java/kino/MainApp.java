@@ -12,7 +12,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import kino.controller.CreateReservationController;
 import kino.controller.ReservationMenuController;
+import kino.controller.smallTheaterController;
+import kino.dao.DaoTicketSale;
 import kino.model.Movie;
+import kino.model.TicketSale;
 
 import java.io.IOException;
 
@@ -20,6 +23,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
+    private DaoTicketSale daoTicketSale = new DaoTicketSale();
 
 
     public MainApp() {
@@ -37,49 +41,83 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-        initReservationMenu();
+        showReservationMenu();
     }
 
-    public void initReservationMenu() {
+    public void showReservationMenu() {
         try {
-            // Load root layout from fxml file.
+            // Load ReservationMenu
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/ReservationMenu.fxml"));
             AnchorPane reservationMenu = loader.load();
 
-            // Show the scene containing the root layout.
+            // Show the scene
             Scene scene = new Scene(reservationMenu);
             primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
             primaryStage.show();
 
-            // Give the kino.controller access to the main app.
+            // Give the reservationMenuController access to the main app.
             ReservationMenuController controller = loader.getController();
             controller.setMainApp(this);
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void showCreateReservationMenu() {
         try {
-            // Load person overview.
+            // Load createReservationMenu
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/CreateReservationMenu.fxml"));
             AnchorPane createReservation = loader.load();
 
 
-            Stage newStage = new Stage();
+            // new scene
             Scene scene = new Scene(createReservation);
-            newStage.setScene(scene);
-            newStage.show();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Create Reservation");
+            primaryStage.show();
 
-            // Give the kino.controller access to the main app.
+            // Give the createReservationController access to the main app.
             CreateReservationController controller = loader.getController();
             controller.setMainApp(this);
 
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void showSeatsSmallTheater() {
+        try {
+            // Load seatsOverview for Small theater
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/view/SeatsOverview/Seats_SmallTheater.fxml"));
+            AnchorPane smallTheater = loader.load();
+
+
+            // new Stage with new scene
+            Stage seatStage = new Stage();
+            Scene scene = new Scene(smallTheater);
+            seatStage.setScene(scene);
+            seatStage.setTitle("Small Theater");
+            seatStage.show();
+
+            // Give the smallTheaterController access to the main app.
+            smallTheaterController controller = loader.getController();
+            controller.setMainApp(this);
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void saveToDB(TicketSale ticketSale) {
+        this.daoTicketSale.createTicketSale(ticketSale);
     }
 
     public static void main(String[] args) {
