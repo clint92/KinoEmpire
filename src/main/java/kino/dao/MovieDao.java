@@ -20,7 +20,7 @@ public class MovieDao implements MovieDaoInterface {
                             String movieEndDate, int movieLength, int active){
         try{
             PreparedStatement prepstat = connection.prepareStatement(
-                    "INSERT INTO movie(movieGenre, movieName, movieage, movieStartDate, movieEndDate, movieLength, active) VALUES (?,?,?,?,?,?,?)");
+                    "INSERT INTO movie(movieGenre, movieName, movieAge, movieStartDate, movieEndDate, movieLength, active) VALUES (?,?,?,?,?,?,?)");
             prepstat.setString(1, movieGenre);
             prepstat.setString(2, movieName);
             prepstat.setInt(3, movieAge);
