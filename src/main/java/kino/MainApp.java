@@ -72,12 +72,10 @@ public class MainApp extends Application {
 
 
             // new stage with new scene
-            Stage newStage = new Stage();
             Scene scene = new Scene(createReservation);
-            newStage.setScene(scene);
-            newStage.setTitle("Create Reservation");
-            newStage.setResizable(false);
-            newStage.show();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Create Reservation");
+            primaryStage.show();
 
             // Give the createReservationController access to the main app.
             CreateReservationController controller = loader.getController();
@@ -98,11 +96,10 @@ public class MainApp extends Application {
 
 
             // new stage with new scene
-            Stage newStage = new Stage();
             Scene scene = new Scene(smallTheater);
-            newStage.setScene(scene);
-            newStage.setResizable(false);
-            newStage.show();
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Small Theater");
+            primaryStage.show();
 
             // Give the smallTheaterController access to the main app.
             smallTheaterController controller = loader.getController();
