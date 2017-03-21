@@ -10,10 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import kino.controller.CreateReservationController;
-import kino.controller.ReservationMenuController;
-import kino.controller.loginController;
-import kino.controller.smallTheaterController;
+import kino.controller.*;
 import kino.dao.DaoTicketSale;
 import kino.model.Movie;
 import kino.model.TicketSale;
@@ -42,7 +39,7 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-        //showLoginMenu();
+        //showLogin();
 
         showReservationMenu();
     }
@@ -94,9 +91,9 @@ public class MainApp extends Application {
     }
 
 
-    public void showLoginMenu() {
+    public void showLogin() {
         try {
-            // Load loginMenu overview.
+            // Load login
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/Login.fxml"));
             AnchorPane createReservation = loader.load();
@@ -106,8 +103,8 @@ public class MainApp extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            // Give the loginController access to the main app.
-            loginController controller = loader.getController();
+            // Give the LoginController access to the main app.
+            LoginController controller = loader.getController();
             controller.setMainApp(this);
 
         } catch (IOException e) {
@@ -130,8 +127,8 @@ public class MainApp extends Application {
             seatStage.setTitle("Small Theater");
             seatStage.show();
 
-            // Give the smallTheaterController access to the main app.
-            smallTheaterController controller = loader.getController();
+            // Give the SmallTheaterController access to the main app.
+            SmallTheaterController controller = loader.getController();
             controller.setMainApp(this);
 
         }
@@ -141,6 +138,31 @@ public class MainApp extends Application {
 
     }
 
+    public void showEditMovieMenu() {
+        try {
+            // Load editMovie
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/view/EditMovieMenu.fxml"));
+            AnchorPane editMovie = loader.load();
+
+
+            // new Stage with new scene
+            Stage seatStage = new Stage();
+            Scene scene = new Scene(editMovie);
+            seatStage.setScene(scene);
+            seatStage.setTitle("Edit Movie");
+            seatStage.show();
+
+            // Give the EditMovieMenuController access to the main app.
+            EditMovieMenuController controller = loader.getController();
+            controller.setMainApp(this);
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void saveToDB(TicketSale ticketSale) {
         this.daoTicketSale.createTicketSale(ticketSale);
     }
@@ -148,4 +170,5 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }

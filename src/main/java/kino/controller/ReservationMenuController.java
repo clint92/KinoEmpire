@@ -20,6 +20,10 @@ public class ReservationMenuController {
 
     }
 
+    public void onEditMovieClicked() {
+        mainApp.showEditMovieMenu();
+    }
+
     public void onDeleteReservationClicked() {
     }
 
