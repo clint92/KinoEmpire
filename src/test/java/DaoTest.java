@@ -22,7 +22,7 @@ public class DaoTest {
 
         EmployeeDao empDao = new EmployeeDao();
 
-        empDao.createEmployee("sven", "ScooterSven69", "a", "fuckaf666");
+       // empDao.createEmployee("sven", "ScooterSven69", "a", "fuckaf666");
 
         System.out.println(ticketSale);
     }
