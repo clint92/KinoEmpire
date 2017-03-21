@@ -6,6 +6,7 @@ import kino.model.ESO;
 public class tickettest {
     public static void main(String[] args) {
         ESO eso = new ESO();
-        System.out.println(eso.generateTicket(20));
+        eso.generateTicketTheater1(20,"logan");
+        System.out.println(eso);
     }
 }
