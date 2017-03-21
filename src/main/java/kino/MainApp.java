@@ -95,10 +95,10 @@ public class MainApp extends Application {
             // Load login
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/Login.fxml"));
-            AnchorPane createReservation = loader.load();
+            AnchorPane login = loader.load();
 
 
-            Scene scene = new Scene(createReservation);
+            Scene scene = new Scene(login);
             primaryStage.setScene(scene);
             primaryStage.show();
 

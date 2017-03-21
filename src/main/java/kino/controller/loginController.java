@@ -30,7 +30,7 @@ public class LoginController {
         boolean existingUser = L.checkLogin(username.getText(),password.getText());
         if(existingUser == true)
         {
-            mainApp.showCreateReservationMenu();
+            mainApp.showReservationMenu();
 
         }
         else{
