@@ -39,9 +39,8 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-        //showLogin();
+        showLoginMenu();
 
-        showReservationMenu();
     }
 
     public void showReservationMenu() {
@@ -91,7 +90,7 @@ public class MainApp extends Application {
     }
 
 
-    public void showLogin() {
+    public void showLoginMenu() {
         try {
             // Load login
             FXMLLoader loader = new FXMLLoader();
