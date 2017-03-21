@@ -12,10 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import kino.controller.CreateReservationController;
 import kino.controller.ReservationMenuController;
-<<<<<<< HEAD
-=======
 import kino.controller.loginController;
->>>>>>> master
 import kino.controller.smallTheaterController;
 import kino.dao.DaoTicketSale;
 import kino.model.Movie;
@@ -45,11 +42,11 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-<<<<<<< HEAD
-        showReservationMenu();
-=======
+
+
+
         loginMenu();
->>>>>>> master
+
     }
 
     public void showReservationMenu() {
@@ -94,8 +91,6 @@ public class MainApp extends Application {
 
         }
         catch (IOException e) {
-<<<<<<< HEAD
-=======
             e.printStackTrace();
         }
     }
@@ -118,7 +113,6 @@ public class MainApp extends Application {
             controller.setMainApp(this);
 
         } catch (IOException e) {
->>>>>>> master
             e.printStackTrace();
         }
     }
