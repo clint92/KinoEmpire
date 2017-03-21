@@ -13,7 +13,9 @@ import javafx.stage.Stage;
 import kino.controller.CreateReservationController;
 import kino.controller.ReservationMenuController;
 import kino.controller.smallTheaterController;
+import kino.dao.DaoTicketSale;
 import kino.model.Movie;
+import kino.model.TicketSale;
 
 import java.io.IOException;
 
@@ -21,6 +23,7 @@ public class MainApp extends Application {
 
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
+    private DaoTicketSale daoTicketSale;
 
 
     public MainApp() {
@@ -109,6 +112,11 @@ public class MainApp extends Application {
         catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public void saveToDB(TicketSale ticketSale) {
+        daoTicketSale.createTicketSale(ticketSale);
     }
 
     public static void main(String[] args) {
