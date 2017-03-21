@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class MoviePlanning {
 
-    MovieDao movieDao;
+    private MovieDao movieDao;
 
     public MoviePlanning() {
         super();

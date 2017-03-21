@@ -5,15 +5,15 @@ package kino.model;
  */
 public class TicketSale {
 
-    int id_ticketSale;
-    int reserved;
-    int sold;
-    double price;
-    String movie_name;
-    int seat;
-    int row;
-    String sale_date;
-    int phone_number;
+    private String movie_name;
+    private String sale_date;
+    private int id_ticketSale;
+    private int reserved;
+    private int sold;
+    private int seat;
+    private int row;
+    private int phone_number;
+    private double price;
 
     public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, String sale_date, int phone_number) {
         this.reserved = reserved;
