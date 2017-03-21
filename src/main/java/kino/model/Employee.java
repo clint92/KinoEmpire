@@ -10,11 +10,20 @@ public class Employee {
     String status;
     String password;
 
+    public Employee(){}
+
     public Employee(String name, String username, String status, String password) {
         this.name = name;
         this.username = username;
         this.status = status;
         this.password = password;
+    }
+    public Employee(int ID, String name, String username, String status, String password) {
+        this.name = name;
+        this.username = username;
+        this.status = status;
+        this.password = password;
+        this.ID = ID;
     }
 
     public String getName() {
