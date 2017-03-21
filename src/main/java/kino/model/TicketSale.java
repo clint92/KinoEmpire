@@ -100,7 +100,8 @@ public class TicketSale {
 
     public String toString () {
 
-        return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved + " Sold: " + sold + " Price: " + price + "";
+        return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved +
+                " Sold: " + sold + " Price: " + price + " Movie: " + movie_name;
 
     }
 

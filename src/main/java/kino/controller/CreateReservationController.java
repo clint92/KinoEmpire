@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import kino.MainApp;
 import kino.model.Movie;
+import kino.model.TicketSale;
 
 /**
  * @author samm0091
@@ -22,11 +23,17 @@ public class CreateReservationController {
     Button chooseSeatsButton;
     @FXML
     Button cancelButton;
-
+    @FXML
+    Button createTicket;
     private MainApp mainApp;
 
     public CreateReservationController() {
+    }
 
+    public void onCreateTicket() {
+        TicketSale ticketSale = new TicketSale();
+        ticketSale.setMovie_name(movieList.getSelectionModel().getSelectedItem().getMovieName());
+        System.out.println(ticketSale);
     }
 
     public void onCancelButtonClicked() {
