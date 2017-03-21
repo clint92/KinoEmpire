@@ -1,21 +1,19 @@
 package kino.model;
-
-
-import java.time.LocalDateTime;
+/*import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 
 import static java.util.concurrent.TimeUnit.*;
-
+*/
 /**
  * Created by Martin H on 16-03-2017.
  */
 
 
 public class Schedule {
-    private String formatDateTime = dateTime();
+   /* private String formatDateTime = dateTime();
     Theater theater;
     Movie movie;
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(movie.getMovieLength()); // needs a int inside the parameter
@@ -64,4 +62,5 @@ public class Schedule {
     public void setFormatDateTime(String formatDateTime) {
         this.formatDateTime = formatDateTime;
     }
+    */
 }
