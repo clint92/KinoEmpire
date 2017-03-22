@@ -13,7 +13,7 @@ import kino.model.Login;
 /**
  * Created by clint on 20-03-2017.
  */
-public class loginController {
+public class LoginController {
 
     public MainApp mainApp;
     @FXML
@@ -30,7 +30,7 @@ public class loginController {
         boolean existingUser = L.checkLogin(username.getText(),password.getText());
         if(existingUser == true)
         {
-            mainApp.showCreateReservationMenu();
+            mainApp.showReservationMenu();
 
         }
         else{

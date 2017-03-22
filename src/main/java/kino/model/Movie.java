@@ -5,21 +5,22 @@ package kino.model;
  */
 public class Movie {
 
-    String movieGenre = "";
-    String movieName = "";
-    int movieAge;
-    int movieId;
-    String movieStartDate;
-    String movieEndDate;
-    int movieLength;
-    int active;
+    private String movieGenre;
+    private String movieName;
+    private int movieAge;
+    private int movieId;
+    private String movieStartDate;
+    private String movieEndDate;
+    private int movieLength;
+    private int active;
 
-    public Movie(){
+    public Movie() {
 
     }
 
-    public Movie(String movieName) {
+    public Movie(String movieName, String movieGenre) {
         this.movieName = movieName;
+        this.movieGenre = movieGenre;
     }
 
     public Movie(String movieGenre, String movieName, int movieAge, int movieId,
@@ -63,7 +64,7 @@ public class Movie {
         return movieId;
     }
 
-    public void setMovieId(int movieId){
+    public void setMovieId(int movieId) {
         this.movieId = movieId;
     }
 
@@ -91,7 +92,9 @@ public class Movie {
         this.movieLength = movieLength;
     }
 
-    public int getActive() { return active; }
+    public int getActive() {
+        return active;
+    }
 
     public void setActive(int active) {
         this.active = active;
@@ -101,6 +104,6 @@ public class Movie {
     public String toString() {
         return "Name: " + getMovieName() + "\nGenre: " + getMovieGenre() + "\nAge: " + getMovieAge() + "\nId: "
                 + getMovieId() + "\nStart Date: " + getMovieStartDate() + "\n End Date: " + getMovieEndDate() +
-        "\nLength: " + getMovieLength();
+                "\nLength: " + getMovieLength();
     }
 }
