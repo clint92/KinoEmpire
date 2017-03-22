@@ -6,9 +6,9 @@ import kino.dao.EmployeeDao;
  * Created by clint on 21-03-2017.
  */
 public class Login {
-EmployeeDao employeeDao = new EmployeeDao();
-Employee e;
-Boolean existingUser = false;
+private EmployeeDao employeeDao = new EmployeeDao();
+private Employee e;
+private Boolean existingUser = false;
 
     public Login(){}
 

@@ -17,6 +17,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fx:id="incorret" fill="RED" layoutX="239.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="incorret Login. Try again" textAlignment="CENTER" visible="false" wrappingWidth="121.6875" />
+      <Text fx:id="incorrect" fill="RED" layoutX="239.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="incorrect Login. Try again" textAlignment="CENTER" visible="false" wrappingWidth="121.6875" />
    </children>
 </AnchorPane>
