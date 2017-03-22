@@ -55,6 +55,8 @@ public class EditMovieMenuController {
         int selectedIndex = movieTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
             movieTable.getItems().remove(selectedIndex);
+
+            //TODO: delete movie from database
         }
         else {
             // Nothing selected.
