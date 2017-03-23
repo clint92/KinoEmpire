@@ -181,7 +181,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         return amount;
     }
 
-    public int getTicketsAvaulable(){
+    public int getTicketsAvailable(){
         int amount = 0;
         try{
             PreparedStatement prepstat = conn.prepareStatement("SELECT sold FROM ticketsale WHERE sold = 0");
