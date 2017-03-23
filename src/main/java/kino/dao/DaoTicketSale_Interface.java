@@ -23,9 +23,4 @@ public interface DaoTicketSale_Interface {
 
     public List<TicketSale> getAllTicketSales();
 
-    public int getTicketsSold();
-
-    public int getTicketsAvailable();
-
-    public double getProfit();
 }
