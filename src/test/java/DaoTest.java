@@ -16,9 +16,9 @@ public class DaoTest {
         TicketSale ticketSale = new TicketSale();
 
         ticketSale.setPrice(123.0);
+        ticketSale.setSeat(5);
 
-
-        daoTicketSale.createTicketSaleParam(ticketSale, 0);
+        daoTicketSale.createTicketSale(ticketSale);
 //
 //        EmployeeDao empDao = new EmployeeDao();
 //
