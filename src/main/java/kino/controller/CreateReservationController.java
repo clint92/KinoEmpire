@@ -42,7 +42,7 @@ public class CreateReservationController {
         int row;
         double ticketPrice = Double.parseDouble(price.getText());
 
-        TicketSale ticketSale = new TicketSale(movieName, date, 0, 0, phone, ticketPrice);
+        TicketSale ticketSale = new TicketSale(ticketPrice, 0, 0, date, movieName, 0, phone);
         System.out.println(ticketSale);
 
         // call method in main to store ticket in DB

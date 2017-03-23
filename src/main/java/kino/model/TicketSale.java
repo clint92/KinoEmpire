@@ -112,7 +112,7 @@ public class TicketSale {
 
         return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved +
                 " Sold: " + sold + " Price: " + price + " Movie: " + movie_name +
-                " Screening Date: " + sale_date + " Phone Number: " + phone_number + "\n";
+                " Screening Date: " + sale_date + " Phone Number: " + phone_number + " Seat: " + seat + "\n";
 
     }
 
