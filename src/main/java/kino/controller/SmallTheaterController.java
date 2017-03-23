@@ -1,6 +1,7 @@
 package kino.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import kino.MainApp;
@@ -24,5 +25,12 @@ public class SmallTheaterController {
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
+    }
+
+    public class MyCircle extends Circle {
+
+        int seat_id;
+
+        RadioButton rd = new RadioButton();
     }
 }
