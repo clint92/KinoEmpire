@@ -38,7 +38,7 @@ public class ESO {
         for (int i = 0; i < ticketNr1; i++) {
             int seat = r.nextInt(240) + 1;
             seatNr1.add(seat);
-            TicketSale ticket = new TicketSale(0, 1, 180, movieName1, r.nextInt(240) + 1, "2017", 14815847);
+            TicketSale ticket = new TicketSale(180, 1, 0, "2017", movieName1, r.nextInt(240) +1, 14815847);
             if (!seatNr1.contains(ticket.getSeat())) {
                 ticketSales1.add(ticket);
                 daoTicketSale.createTicketSale(ticket);
@@ -59,7 +59,7 @@ public class ESO {
             for (int i = 0; i < ticketNr2 ; i++) {
                 int seat = r.nextInt(400) + 1;
                 seatNr2.add(seat);
-                TicketSale ticket = new TicketSale(0, 1, 180, movieName2, r.nextInt(400) + 1, "2017", 14815847);
+                TicketSale ticket = new TicketSale(180, 1, 0, "2017", movieName2, r.nextInt(400) + 1, 15206894);
                 if (!seatNr2.contains(ticket.getSeat())) {
                     ticketSales2.add(ticket);
                     daoTicketSale.createTicketSale(ticket);
