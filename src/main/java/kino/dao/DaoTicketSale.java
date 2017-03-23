@@ -141,13 +141,12 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             while (resultset.next()) {
                 TicketSale ticketSale = new TicketSale();
 
-
-                ticketSale.setReserved(resultset.getInt(1));
+                ticketSale.setPrice(resultset.getDouble(1));
                 ticketSale.setSold(resultset.getInt(2));
-                ticketSale.setPrice(resultset.getDouble(3));
-                ticketSale.setMovie_name(resultset.getString(4));
-                ticketSale.setSeat(resultset.getInt(5));
-                ticketSale.setSale_date(resultset.getString(6));
+                ticketSale.setReserved(resultset.getInt(3));
+                ticketSale.setSale_date(resultset.getString(4));
+                ticketSale.setMovie_name(resultset.getString(5));
+                ticketSale.setSeat(resultset.getInt(6));
                 ticketSale.setPhone_number(resultset.getInt(7));
                 ticketList.add(count, ticketSale);
 

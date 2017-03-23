@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import kino.controller.*;
 import kino.dao.DaoTicketSale;
@@ -18,11 +19,13 @@ import kino.model.TicketSale;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainApp extends Application {
 
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
+    private List<TicketSale> ticketSaleList = new ArrayList();
     private DaoTicketSale daoTicketSale = new DaoTicketSale();
     private MovieDao movieDao = new MovieDao();
 
@@ -120,7 +123,7 @@ public class MainApp extends Application {
             // Load seatsOverview for Small theater
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/SeatsOverview/Seats_SmallTheater.fxml"));
-            AnchorPane smallTheater = loader.load();
+            GridPane smallTheater = loader.load();
 
 
             // new Stage with new scene
@@ -128,11 +131,15 @@ public class MainApp extends Application {
             Scene scene = new Scene(smallTheater);
             seatStage.setScene(scene);
             seatStage.setTitle("Small Theater");
-            seatStage.show();
 
             // Give the SmallTheaterController access to the main app.
             SmallTheaterController controller = loader.getController();
             controller.setMainApp(this);
+
+            this.ticketSaleList = daoTicketSale.getAllTicketSales();
+
+            controller.drawTheater(ticketSaleList);
+            seatStage.show();
 
         }
         catch (IOException e) {
@@ -180,8 +187,7 @@ public class MainApp extends Application {
     }
 
     public void saveMovieToDB(Movie movie) {
-        this.movieDao.createMovie(movie.getMovieGenre(), movie.getMovieName(),
-                -1, null, null, -1, -1);
+        this.movieDao.createMovieGenreName(movie.getMovieGenre(), movie.getMovieName());
     }
 
     public static void main(String[] args) {
