@@ -15,6 +15,10 @@ public class CreateReservationController {
     @FXML
     private ComboBox<String> screeningDate;
     @FXML
+    private ComboBox<Integer> seatColumn;
+    @FXML
+    private ComboBox<Integer> seatRows;
+    @FXML
     private TextField price;
     @FXML
     private TextField phoneNumber;
@@ -39,11 +43,19 @@ public class CreateReservationController {
         ticketSale.setPrice(Double.parseDouble(price.getText()));
         ticketSale.setPhone_number(Integer.parseInt(phoneNumber.getText()));
         ticketSale.setReserved(1);
+
+        String movieName = movieList.getSelectionModel().getSelectedItem().getMovieName();
+        String date = screeningDate.getSelectionModel().getSelectedItem();
+        int phone = Integer.parseInt(phoneNumber.getText());
+        int seat;
+        int row;
+        double ticketPrice = Double.parseDouble(price.getText());
+
+        //TicketSale ticketSale = new TicketSale(ticketPrice, 0, 0, date, movieName, 0, phone);
+
         System.out.println(ticketSale);
 
         // call method in main to store ticket in DB
-
-
         this.mainApp.saveTicketToDB(ticketSale);
         } else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
