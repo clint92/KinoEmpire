@@ -5,10 +5,11 @@ package kino.model;
  */
 
 public class Theater {
-    int theaterNumber =0;
-    int rows = 0;
-    int seats = 0;
-    int id;
+
+    private int theaterNumber =0;
+    private int rows = 0;
+    private int seats = 0;
+    private int id;
 
     public Theater(int theaterNumber, int rows, int seats) {
         this.rows = rows;

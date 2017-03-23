@@ -13,30 +13,30 @@ import kino.model.Login;
 /**
  * Created by clint on 20-03-2017.
  */
-public class loginController {
+public class LoginController {
 
-    public MainApp mainApp;
     @FXML
-    TextField username;
+    private TextField username;
     @FXML
-    TextField password;
+    private TextField password;
     @FXML
-    Text incorret;
+    private Text incorrect;
 
-    Login L = new Login();
+    private MainApp mainApp;
+    private Login L = new Login();
 
     public void loginOK (ActionEvent event)
     {
         boolean existingUser = L.checkLogin(username.getText(),password.getText());
         if(existingUser == true)
         {
-            mainApp.showCreateReservationMenu();
+            mainApp.showReservationMenu();
 
         }
         else{
             username.clear();
             password.clear();
-            incorret.setVisible(true);
+            incorrect.setVisible(true);
 
         }
     }

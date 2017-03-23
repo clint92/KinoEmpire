@@ -11,19 +11,19 @@ import kino.model.TicketSale;
 public class CreateReservationController {
 
     @FXML
-    ComboBox<Movie> movieList;
+    private ComboBox<Movie> movieList;
     @FXML
-    ComboBox<String> screeningDate;
+    private ComboBox<String> screeningDate;
     @FXML
-    TextField price;
+    private TextField price;
     @FXML
-    TextField phoneNumber;
+    private TextField phoneNumber;
     @FXML
-    Button chooseSeatsButton;
+    private Button chooseSeatsButton;
     @FXML
-    Button cancelButton;
+    private Button cancelButton;
     @FXML
-    Button createTicket;
+    private Button createTicket;
 
     private MainApp mainApp;
 
@@ -37,7 +37,9 @@ public class CreateReservationController {
         ticketSale.setPrice(Double.parseDouble(price.getText()));
         ticketSale.setPhone_number(Integer.parseInt(phoneNumber.getText()));
         System.out.println(ticketSale);
-        this.mainApp.saveToDB(ticketSale);
+
+        // call method in main to store ticket in DB
+        this.mainApp.saveTicketToDB(ticketSale);
     }
 
     public void onCancelButtonClicked() {

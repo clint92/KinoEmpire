@@ -10,11 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import kino.controller.CreateReservationController;
-import kino.controller.ReservationMenuController;
-import kino.controller.loginController;
-import kino.controller.smallTheaterController;
+import kino.controller.*;
 import kino.dao.DaoTicketSale;
+import kino.dao.MovieDao;
 import kino.model.Movie;
 import kino.model.TicketSale;
 
@@ -25,11 +23,12 @@ public class MainApp extends Application {
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
     private DaoTicketSale daoTicketSale = new DaoTicketSale();
+    private MovieDao movieDao = new MovieDao();
 
 
     public MainApp() {
-        movieList.add(new Movie("Ali G"));
-        movieList.add(new Movie("Ali G in da house"));
+        movieList.add(new Movie("Ali G", "Comedy"));
+        movieList.add(new Movie("Ali G in da house", "Romance"));
 
     }
 
@@ -42,10 +41,7 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Keanu");
 
-
-
-
-        loginMenu();
+        showLoginMenu();
 
     }
 
@@ -96,23 +92,24 @@ public class MainApp extends Application {
     }
 
 
-    public void loginMenu() {
+    public void showLoginMenu() {
         try {
-            // Load person overview.
+            // Load login
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/view/Login.fxml"));
-            AnchorPane createReservation = loader.load();
+            AnchorPane login = loader.load();
 
 
-            Scene scene = new Scene(createReservation);
+            Scene scene = new Scene(login);
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            // Give the kino.controller access to the main app.
-            loginController controller = loader.getController();
+            // Give the LoginController access to the main app.
+            LoginController controller = loader.getController();
             controller.setMainApp(this);
 
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -132,8 +129,8 @@ public class MainApp extends Application {
             seatStage.setTitle("Small Theater");
             seatStage.show();
 
-            // Give the smallTheaterController access to the main app.
-            smallTheaterController controller = loader.getController();
+            // Give the SmallTheaterController access to the main app.
+            SmallTheaterController controller = loader.getController();
             controller.setMainApp(this);
 
         }
@@ -143,11 +140,42 @@ public class MainApp extends Application {
 
     }
 
-    public void saveToDB(TicketSale ticketSale) {
+    public void showEditMovieMenu() {
+        try {
+            // Load editMovie
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/view/EditMovieMenu.fxml"));
+            AnchorPane editMovie = loader.load();
+
+
+            // new Stage with new scene
+            Stage seatStage = new Stage();
+            Scene scene = new Scene(editMovie);
+            seatStage.setScene(scene);
+            seatStage.setTitle("Edit Movie");
+            seatStage.show();
+
+            // Give the EditMovieMenuController access to the main app.
+            EditMovieMenuController controller = loader.getController();
+            controller.setMainApp(this);
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveTicketToDB(TicketSale ticketSale) {
         this.daoTicketSale.createTicketSale(ticketSale);
+    }
+
+    public void saveMovieToDB(Movie movie) {
+        this.movieDao.createMovie(movie.getMovieGenre(), movie.getMovieName(),
+                -1, null, null, -1, -1);
     }
 
     public static void main(String[] args) {
         launch(args);
     }
+
 }

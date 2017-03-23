@@ -4,11 +4,12 @@ package kino.model;
  * Created by Ahmed Fadhel on 14-03-2017.
  */
 public class Employee {
-    String name;
-    String username;
-    int ID;
-    String status;
-    String password;
+
+    private String name;
+    private String username;
+    private String status;
+    private String password;
+    private int ID;
 
     public Employee(){}
 
