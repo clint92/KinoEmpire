@@ -30,6 +30,7 @@ public class MainApp extends Application {
     private MovieDao movieDao = new MovieDao();
 
 
+
     public MainApp() {
         movieList.add(new Movie("Ali G", "Comedy"));
         movieList.add(new Movie("Ali G in da house", "Romance"));
@@ -188,6 +189,13 @@ public class MainApp extends Application {
 
     public void saveMovieToDB(Movie movie) {
         this.movieDao.createMovieGenreName(movie.getMovieGenre(), movie.getMovieName());
+    }
+
+    public List<TicketSale> findReservationFromDB(int phonenumber)
+    {
+        List<TicketSale> ticketList = new ArrayList<TicketSale>();
+        ticketList = this.daoTicketSale.findTickets(phonenumber);
+        return ticketList;
     }
 
     public static void main(String[] args) {

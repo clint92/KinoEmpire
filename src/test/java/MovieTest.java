@@ -6,8 +6,5 @@ import kino.dao.DaoTicketSale;
 public class MovieTest {
     public static void main(String[] args) {
         DaoTicketSale daoTicketSale = new DaoTicketSale();
-        System.out.println(daoTicketSale.getProfit());
-        System.out.println(daoTicketSale.getTicketsSold());
-        System.out.println(daoTicketSale.getTicketsAvailable());
     }
 }
