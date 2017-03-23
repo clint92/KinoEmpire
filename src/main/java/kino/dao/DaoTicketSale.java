@@ -1,11 +1,8 @@
 package kino.dao;
 
 
-import kino.model.Movie;
 import kino.model.TicketSale;
 import kino.utility.SQLConnection;
-import sun.security.krb5.internal.Ticket;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
