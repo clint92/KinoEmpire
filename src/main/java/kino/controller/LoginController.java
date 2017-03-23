@@ -51,5 +51,4 @@ public class LoginController {
         this.mainApp = mainApp;
 
     }
-
 }

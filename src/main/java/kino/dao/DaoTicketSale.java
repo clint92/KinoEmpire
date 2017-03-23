@@ -128,6 +128,9 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         }
     }
 
+
+
+
     public List<TicketSale> getAllTicketSales() {
         List<TicketSale> ticketList = new ArrayList<TicketSale>();
         int count = 0;
@@ -138,13 +141,12 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             while (resultset.next()) {
                 TicketSale ticketSale = new TicketSale();
 
-
-                ticketSale.setReserved(resultset.getInt(1));
+                ticketSale.setPrice(resultset.getDouble(1));
                 ticketSale.setSold(resultset.getInt(2));
-                ticketSale.setPrice(resultset.getDouble(3));
-                ticketSale.setMovie_name(resultset.getString(4));
-                ticketSale.setSeat(resultset.getInt(5));
-                ticketSale.setSale_date(resultset.getString(6));
+                ticketSale.setReserved(resultset.getInt(3));
+                ticketSale.setSale_date(resultset.getString(4));
+                ticketSale.setMovie_name(resultset.getString(5));
+                ticketSale.setSeat(resultset.getInt(6));
                 ticketSale.setPhone_number(resultset.getInt(7));
                 ticketList.add(count, ticketSale);
 
@@ -159,6 +161,61 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         }
         return ticketList;
     }
+
+    public int getTicketsSold(){
+        int amount = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT sold FROM ticketsale WHERE sold = 1");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                amount++;
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return amount;
+    }
+
+    public int getTicketsAvailable(){
+        int amount = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT sold FROM ticketsale WHERE sold = 0");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                amount++;
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return amount;
+    }
+
+    public double getProfit(){
+        int sum = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT price FROM ticketsale WHERE sold = 1");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                sum += resultset.getInt(1);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+
 
 
 }
