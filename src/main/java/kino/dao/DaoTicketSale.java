@@ -23,7 +23,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
     public void createTicketSaleParam(TicketSale ticketSale, int sale_status) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, row) VALUES (? ,? ,?, ?, ?, ?, ?)");
+            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, row, phone_number) VALUES (? ,? ,?, ?, ?, ?, ?, ?)");
 
             if (sale_status == 0) {
                 prepStat.setDouble(1, ticketSale.getPrice());
@@ -33,6 +33,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
                 prepStat.setString(5, ticketSale.getMovie_name());
                 prepStat.setInt(6, ticketSale.getSeat());
                 prepStat.setInt(7, ticketSale.getRow());
+                prepStat.setInt(8, ticketSale.getPhone_number());
 
             }
             else if (sale_status == 1) {
@@ -43,6 +44,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
                 prepStat.setString(5, ticketSale.getMovie_name());
                 prepStat.setInt(6, ticketSale.getSeat());
                 prepStat.setInt(7, ticketSale.getRow());
+                prepStat.setInt(8, ticketSale.getPhone_number());
             }
             else if (sale_status > 1) {
                 throw new IllegalArgumentException("Error in parameter, must be 0 or 1");
@@ -58,7 +60,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
     public void createTicketSale(TicketSale ticketSale) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, row) VALUES (? ,? ,?, ?, ?, ?, ?)");
+            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, row, phone_number) VALUES (? ,? ,?, ?, ?, ?, ?, ?)");
 
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
@@ -67,6 +69,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             prepStat.setString(5, ticketSale.getMovie_name());
             prepStat.setInt(6, ticketSale.getSeat());
             prepStat.setInt(7, ticketSale.getRow());
+            prepStat.setInt(8, ticketSale.getPhone_number());
             prepStat.executeUpdate();
 
 

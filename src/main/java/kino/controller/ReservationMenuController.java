@@ -1,6 +1,9 @@
 package kino.controller;
 
+import javafx.fxml.FXML;
 import kino.MainApp;
+
+import java.awt.*;
 
 /**
  * @author samm0091
@@ -9,6 +12,8 @@ import kino.MainApp;
 public class ReservationMenuController {
 
     private MainApp mainApp;
+    @FXML
+    TextField phoneNumber;
 
     public ReservationMenuController() {
 

@@ -36,6 +36,7 @@ public class CreateReservationController {
         ticketSale.setSale_date(screeningDate.getSelectionModel().getSelectedItem());
         ticketSale.setPrice(Double.parseDouble(price.getText()));
         ticketSale.setPhone_number(Integer.parseInt(phoneNumber.getText()));
+        ticketSale.setReserved(1);
         System.out.println(ticketSale);
 
         // call method in main to store ticket in DB
@@ -49,6 +50,7 @@ public class CreateReservationController {
     public void onChooseSeatsClicked() {
         this.mainApp.showSeatsSmallTheater();
     }
+
 
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
