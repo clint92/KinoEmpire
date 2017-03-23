@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="KinoEmpire" target="1.8" />
-      <module name="KinoEmpire (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
