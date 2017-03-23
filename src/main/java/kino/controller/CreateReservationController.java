@@ -15,6 +15,10 @@ public class CreateReservationController {
     @FXML
     private ComboBox<String> screeningDate;
     @FXML
+    private ComboBox<Integer> seatColumn;
+    @FXML
+    private ComboBox<Integer> seatRows;
+    @FXML
     private TextField price;
     @FXML
     private TextField phoneNumber;

@@ -1,8 +1,8 @@
 package kino.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
+import javafx.scene.control.RadioButton;
+import javafx.scene.layout.GridPane;
 import kino.MainApp;
 
 public class SmallTheaterController {
@@ -10,30 +10,26 @@ public class SmallTheaterController {
     private MainApp mainApp;
 
     @FXML
-    private Circle A1;
-    @FXML
-    private Circle A2;
-    @FXML
-    private Circle A3;
-    @FXML
-    private Circle B1;
-    @FXML
-    private Circle C1;
+    private GridPane seatOverview;
 
     public SmallTheaterController() {
 
     }
 
-    public void onA1Clicked() {
-        A1.setFill(Color.GREEN);
-        A1.setFill(Color.RED);
-        A1.setFill(Color.BLUE);
-    }
-    public void onB1Clicked() {
-        B1.setFill(Color.GREEN);
-    }
-    public void onC1Clicked() {
-        C1.setFill(Color.GREEN);
+    public void draw() {
+
+        int columns = 20, rows = 12, horizontal = 20, vertical = 20;
+        RadioButton rb = null;
+        for (int i = 0; i < columns; ++i) {//Iterate through columns
+            for (int j = 0; j < rows; ++j) {//Iterate through rows
+
+                rb = new RadioButton();
+
+                seatOverview.add(rb, i, j);
+                //Add Rectangle to board
+
+            }
+        }
     }
 
     public void setMainApp(MainApp mainApp) {

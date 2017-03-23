@@ -21,7 +21,9 @@
         </columns>
       </TableView>
       <ComboBox fx:id="screeningDate" layoutX="7.0" layoutY="52.0" prefHeight="25.0" prefWidth="87.0" promptText="Date" />
-      <TextField fx:id="price" disable="true" layoutX="7.0" layoutY="147.0" promptText="Price" />
-      <Label layoutX="163.0" layoutY="151.0" text="DKK" />
+      <TextField fx:id="price" disable="true" layoutX="7.0" layoutY="168.0" promptText="Price" />
+      <Label layoutX="163.0" layoutY="172.0" text="DKK" />
+      <ComboBox fx:id="seatColumn" layoutX="7.0" layoutY="134.0" prefHeight="25.0" prefWidth="87.0" promptText="Column" />
+      <ComboBox fx:id="seatRows" layoutX="109.0" layoutY="134.0" prefHeight="25.0" prefWidth="87.0" promptText="Rows" />
    </children>
 </AnchorPane>
