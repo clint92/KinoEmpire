@@ -51,7 +51,33 @@ public class MovieDao implements MovieDaoInterface {
         }
     }
 
+    public void createMovieGenreName(String movieGenre, String movieName){
+        try{
+            PreparedStatement prepstat = connection.prepareStatement(
+                    "INSERT INTO movie(movieGenre, movieName) VALUES (?,?)");
+            prepstat.setString(1, movieGenre);
+            prepstat.setString(2, movieName);
+            prepstat.executeUpdate();
+        }
+        catch(SQLException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public void createMovieName(String movieName){
+        try{
+            PreparedStatement prepstat = connection.prepareStatement(
+                    "INSERT INTO movie(movieName) VALUES (?)");
+            prepstat.setString(1, movieName);
+            prepstat.executeUpdate();
+        }
+        catch(SQLException ex){
+            ex.printStackTrace();
+        }
+    }
+
     public void updateMovie(Movie movie) {
+
         try {
             PreparedStatement prepstat = connection.prepareStatement(("UPDATE movie SET movieGenre = ?, movieName = ?, movieAge" +
                     " = ?, movieStartDate = ?, movieEndDate = ?, movieLength = ?, active = ?"));
