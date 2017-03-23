@@ -9,14 +9,10 @@ import java.util.Random;
  */
 public class ESO {
 
-<<<<<<< HEAD
+
     TicketSale ticketSale;
     ArrayList<TicketSale> ticketSales1 = new ArrayList<>();
     ArrayList<TicketSale> ticketSales2 = new ArrayList<>();
-=======
-    private TicketSale ticketSale;
-    private ArrayList<TicketSale> ticketSales = new ArrayList<>();
->>>>>>> master
 
     public boolean isReserved(){
         if (ticketSale.getReserved() == 1){
@@ -37,7 +33,7 @@ public class ESO {
         Random r = new Random();
         for (int i = 0; i < ticketNr ; i++) {
             int seat = r.nextInt(240) + 1;
-            TicketSale ticket = new TicketSale(0, 1, 180, movieName, seat);
+           // TicketSale ticket = new TicketSale(0, 1, 180, movieName, seat);
         }
 
 
@@ -68,7 +64,7 @@ public class ESO {
             int seat = r.nextInt(16) + 1;
             for (int j = 0; j < ticketSales2.size() ; j++) {
                 if (ticketSales2.get(j).getRow() != row || ticketSales2.get(j).getSeat() != seat){
-                    this.ticketSale = new TicketSale(r.nextInt(2), r.nextInt(2), 180, movieName, seat, row, 2017);
+           //         this.ticketSale = new TicketSale(r.nextInt(2), r.nextInt(2), 180, movieName, seat, row, 2017);
                     ticketSales2.add(ticketSale);
                 }
             }
