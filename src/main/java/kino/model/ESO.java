@@ -9,9 +9,14 @@ import java.util.Random;
  */
 public class ESO {
 
+<<<<<<< HEAD
     TicketSale ticketSale;
     ArrayList<TicketSale> ticketSales1 = new ArrayList<>();
     ArrayList<TicketSale> ticketSales2 = new ArrayList<>();
+=======
+    private TicketSale ticketSale;
+    private ArrayList<TicketSale> ticketSales = new ArrayList<>();
+>>>>>>> master
 
     public boolean isReserved(){
         if (ticketSale.getReserved() == 1){

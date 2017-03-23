@@ -4,17 +4,27 @@ package kino.model;
  * Created by Ahmed Fadhel on 14-03-2017.
  */
 public class Employee {
-    String name;
-    String username;
-    int ID;
-    String status;
-    String password;
+
+    private String name;
+    private String username;
+    private String status;
+    private String password;
+    private int ID;
+
+    public Employee(){}
 
     public Employee(String name, String username, String status, String password) {
         this.name = name;
         this.username = username;
         this.status = status;
         this.password = password;
+    }
+    public Employee(int ID, String name, String username, String status, String password) {
+        this.name = name;
+        this.username = username;
+        this.status = status;
+        this.password = password;
+        this.ID = ID;
     }
 
     public String getName() {

@@ -8,7 +8,7 @@ import kino.MainApp;
  */
 public class ReservationMenuController {
 
-    public MainApp mainApp;
+    private MainApp mainApp;
 
     public ReservationMenuController() {
 
@@ -18,6 +18,10 @@ public class ReservationMenuController {
     public void onCreateReservationClicked() {
         mainApp.showCreateReservationMenu();
 
+    }
+
+    public void onEditMovieClicked() {
+        mainApp.showEditMovieMenu();
     }
 
     public void onDeleteReservationClicked() {

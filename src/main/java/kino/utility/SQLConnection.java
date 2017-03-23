@@ -17,7 +17,6 @@ public class SQLConnection {
 
     private static Connection connection = null;
 
-
     public static Connection getConnection() {
 
         if (connection != null) {

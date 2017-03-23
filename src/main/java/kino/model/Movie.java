@@ -5,28 +5,34 @@ package kino.model;
  */
 public class Movie {
 
-    String movieGenre = "";
-    String movieName = "";
-    int movieAge;
-    int movieId;
-    int movieDate;
-    int movieLength;
+    private String movieGenre;
+    private String movieName;
+    private String movieStartDate;
+    private String movieEndDate;
+    private int movieAge;
+    private int movieId;
+    private int movieLength;
+    private int active;
 
-    public Movie(){
+    public Movie() {
 
     }
 
-    public Movie(String movieName) {
+    public Movie(String movieName, String movieGenre) {
         this.movieName = movieName;
+        this.movieGenre = movieGenre;
     }
 
-    public Movie(String movieGenre, String movieName, int movieAge, int movieId, int movieDate, int movieLength) {
+    public Movie(String movieGenre, String movieName, int movieAge, int movieId,
+                 String movieStartDate, String movieEndDate, int movieLength, int active) {
         this.movieGenre = movieGenre;
         this.movieName = movieName;
         this.movieAge = movieAge;
         this.movieId = movieId;
-        this.movieDate = movieDate;
+        this.movieStartDate = movieStartDate;
+        this.movieEndDate = movieEndDate;
         this.movieLength = movieLength;
+        this.active = active;
     }
 
 
@@ -62,12 +68,20 @@ public class Movie {
         this.movieId = movieId;
     }
 
-    public int getMovieDate() {
-        return movieDate;
+    public String getMovieStartDate() {
+        return movieStartDate;
     }
 
-    public void setMovieDate(int movieDate) {
-        this.movieDate = movieDate;
+    public void setMovieStartDate(String movieStartDate) {
+        this.movieStartDate = movieStartDate;
+    }
+
+    public String getMovieEndDate() {
+        return movieEndDate;
+    }
+
+    public void setMovieEndDate(String movieEndDate) {
+        this.movieEndDate = movieEndDate;
     }
 
     public int getMovieLength() {
@@ -78,8 +92,18 @@ public class Movie {
         this.movieLength = movieLength;
     }
 
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
-        return this.movieName;
+        return "Name: " + getMovieName() + "\nGenre: " + getMovieGenre() + "\nAge: " + getMovieAge() + "\nId: "
+                + getMovieId() + "\nStart Date: " + getMovieStartDate() + "\n End Date: " + getMovieEndDate() +
+                "\nLength: " + getMovieLength();
     }
 }

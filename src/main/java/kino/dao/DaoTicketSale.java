@@ -3,10 +3,12 @@ package kino.dao;
 
 import kino.model.TicketSale;
 import kino.utility.SQLConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dave on 17/03/2017.
@@ -29,20 +31,20 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
                 prepStat.setDouble(1, ticketSale.getPrice());
                 prepStat.setInt(2, 1);
                 prepStat.setInt(3, ticketSale.getReserved());
-                prepStat.setInt(4, ticketSale.getSale_date());
+                prepStat.setString(4, ticketSale.getSale_date());
                 prepStat.setString(5, ticketSale.getMovie_name());
                 prepStat.setInt(6, ticketSale.getSeat());
-                prepStat.setInt(7, ticketSale.getRow());
+                prepStat.setInt(7, ticketSale.getPhone_number());
 
             }
             else if (sale_status == 1) {
                 prepStat.setDouble(1, ticketSale.getPrice());
                 prepStat.setInt(2, ticketSale.getSold());
                 prepStat.setInt(3, 1);
-                prepStat.setInt(4, ticketSale.getSale_date());
+                prepStat.setString(4, ticketSale.getSale_date());
                 prepStat.setString(5, ticketSale.getMovie_name());
                 prepStat.setInt(6, ticketSale.getSeat());
-                prepStat.setInt(7, ticketSale.getRow());
+                prepStat.setInt(7, ticketSale.getPhone_number());
             }
             else if (sale_status > 1) {
                 throw new IllegalArgumentException("Error in parameter, must be 0 or 1");
@@ -63,10 +65,10 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
             prepStat.setInt(3, ticketSale.getReserved());
-            prepStat.setInt(4, ticketSale.getSale_date());
+            prepStat.setString(4, ticketSale.getSale_date());
             prepStat.setString(5, ticketSale.getMovie_name());
             prepStat.setInt(6, ticketSale.getSeat());
-            prepStat.setInt(7, ticketSale.getRow());
+            prepStat.setInt(7, ticketSale.getPhone_number());
             prepStat.executeUpdate();
 
 
@@ -100,10 +102,10 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
             prepStat.setInt(3, ticketSale.getReserved());
-            prepStat.setInt(4, ticketSale.getSale_date());
+            prepStat.setString(4, ticketSale.getSale_date());
             prepStat.setString(5, ticketSale.getMovie_name());
             prepStat.setInt(6, ticketSale.getSeat());
-            prepStat.setInt(7, ticketSale.getRow());
+            prepStat.setInt(7, ticketSale.getPhone_number());
             prepStat.setInt(8, ticketSale.getId_ticketSale());
 
         }
@@ -126,6 +128,35 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         }
     }
 
+    public List<TicketSale> getAllTicketSales() {
+        List<TicketSale> ticketList = new ArrayList<TicketSale>();
+        int count = 0;
+        try {
+            PreparedStatement prepstat = conn.prepareStatement("SELECT * FROM ticketsale");
+            ResultSet resultset = prepstat.executeQuery();
+
+            while (resultset.next()) {
+                TicketSale ticketSale = new TicketSale();
+                ticketSale.setPrice(resultset.getDouble(1));
+                ticketSale.setSold(resultset.getInt(2));
+                ticketSale.setReserved(resultset.getInt(3));
+                ticketSale.setSale_date(resultset.getString(4));
+                ticketSale.setMovie_name(resultset.getString(5));
+                ticketSale.setSeat(resultset.getInt(6));
+                ticketSale.setPhone_number(resultset.getInt(7));
+                ticketList.add(count, ticketSale);
+
+                count++;
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return ticketList;
+    }
 
 
 }
