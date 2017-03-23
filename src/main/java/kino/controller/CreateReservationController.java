@@ -46,8 +46,6 @@ public class CreateReservationController {
         System.out.println(ticketSale);
 
         // call method in main to store ticket in DB
-
-
         this.mainApp.saveTicketToDB(ticketSale);
     }
 

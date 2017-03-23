@@ -4,6 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.GridPane;
 import kino.MainApp;
+import kino.model.TicketSale;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SmallTheaterController {
 
@@ -16,19 +20,40 @@ public class SmallTheaterController {
 
     }
 
-    public void draw() {
+    public void drawTheater(List<TicketSale> ticketSaleList) {
 
-        int columns = 20, rows = 12, horizontal = 20, vertical = 20;
-        RadioButton rb = null;
-        for (int i = 0; i < columns; ++i) {//Iterate through columns
-            for (int j = 0; j < rows; ++j) {//Iterate through rows
+        List<TicketSale> list = new ArrayList(ticketSaleList);
+        int seatCount = 1;
+        System.out.println(list);
+        int columns = 20, rows = 12;
+        for (int i = 0; i < columns; ++i) {
+            for (int j = 0; j < rows; ++j) {
 
-                rb = new RadioButton();
+                myButton rb = new myButton(seatCount);
+                seatCount++;
 
+                for (int k = 0; k < list.size(); k++) {
+                    if (list.get(k).getSold() == 420) {
+                        System.out.println("hej");
+                        //rb.setDisable(true);
+                    }
+                }
                 seatOverview.add(rb, i, j);
-                //Add Rectangle to board
 
             }
+        }
+    }
+
+    public class myButton extends RadioButton {
+
+        int seatID;
+
+        public myButton(int id) {
+            this.seatID = id;
+        }
+
+        public void setSeatID(int id) {
+            this.seatID = id;
         }
     }
 

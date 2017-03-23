@@ -18,11 +18,14 @@ import kino.model.Movie;
 import kino.model.TicketSale;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApp extends Application {
 
     private Stage primaryStage;
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
+    private List<TicketSale> ticketSaleList = new ArrayList();
     private DaoTicketSale daoTicketSale = new DaoTicketSale();
     private MovieDao movieDao = new MovieDao();
 
@@ -132,7 +135,10 @@ public class MainApp extends Application {
             // Give the SmallTheaterController access to the main app.
             SmallTheaterController controller = loader.getController();
             controller.setMainApp(this);
-            controller.draw();
+
+            this.ticketSaleList = daoTicketSale.getAllTicketSales();
+
+            controller.drawTheater(ticketSaleList);
             seatStage.show();
 
         }
