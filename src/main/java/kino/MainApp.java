@@ -17,6 +17,8 @@ import kino.model.Movie;
 import kino.model.TicketSale;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainApp extends Application {
 
@@ -24,6 +26,7 @@ public class MainApp extends Application {
     private ObservableList<Movie> movieList = FXCollections.observableArrayList();
     private DaoTicketSale daoTicketSale = new DaoTicketSale();
     private MovieDao movieDao = new MovieDao();
+
 
 
     public MainApp() {
@@ -172,6 +175,13 @@ public class MainApp extends Application {
     public void saveMovieToDB(Movie movie) {
         this.movieDao.createMovie(movie.getMovieGenre(), movie.getMovieName(),
                 -1, null, null, -1, -1);
+    }
+
+    public List<TicketSale> findReservationFromDB(int phonenumber)
+    {
+        List<TicketSale> ticketList = new ArrayList<TicketSale>();
+        ticketList = this.daoTicketSale.findTickets(phonenumber);
+        return ticketList;
     }
 
     public static void main(String[] args) {

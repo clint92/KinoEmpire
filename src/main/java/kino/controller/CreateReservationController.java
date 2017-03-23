@@ -1,12 +1,12 @@
 package kino.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import kino.MainApp;
 import kino.model.Movie;
 import kino.model.TicketSale;
+
+import java.util.Optional;
 
 public class CreateReservationController {
 
@@ -28,9 +28,11 @@ public class CreateReservationController {
     private MainApp mainApp;
 
     public CreateReservationController() {
+
     }
 
     public void onCreateTicket() {
+        if(phoneNumber.getText().length()==8) {
         TicketSale ticketSale = new TicketSale();
         ticketSale.setMovie_name(movieList.getSelectionModel().getSelectedItem().getMovieName());
         ticketSale.setSale_date(screeningDate.getSelectionModel().getSelectedItem());
@@ -40,7 +42,20 @@ public class CreateReservationController {
         System.out.println(ticketSale);
 
         // call method in main to store ticket in DB
+
+
         this.mainApp.saveTicketToDB(ticketSale);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                    "The phone number you have entered is invalid. Please check" +
+                            " if the number has 8 digits.");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+
+            }
+        }
+
     }
 
     public void onCancelButtonClicked() {
