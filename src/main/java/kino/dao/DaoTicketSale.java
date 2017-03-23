@@ -163,5 +163,24 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         return ticketList;
     }
 
+    public double getProfit(){
+        int sum = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT price FROM ticketsale WHERE sold = 1");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                sum += resultset.getInt(1);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+
+
 
 }
