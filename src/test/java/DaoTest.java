@@ -16,15 +16,18 @@ public class DaoTest {
         TicketSale ticketSale = new TicketSale();
 
         ticketSale.setPrice(123.0);
+        ticketSale.setSeat(5);
 
+        daoTicketSale.createTicketSale(ticketSale);
+//
+//        EmployeeDao empDao = new EmployeeDao();
+//
+//        empDao.createEmployee("Clint", "1", "a", "1");
+//
+//        System.out.println(ticketSale);
 
-        daoTicketSale.createTicketSaleParam(ticketSale, 0);
-
-        EmployeeDao empDao = new EmployeeDao();
-
-        empDao.createEmployee("Clint", "1", "a", "1");
-
-        System.out.println(ticketSale);
+//           System.out.println(daoTicketSale.getAllTicketSales())
+        ;
     }
 
 }

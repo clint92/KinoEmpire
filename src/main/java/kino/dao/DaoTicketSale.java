@@ -190,5 +190,20 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             return ticketList;
         }
 
+    @Override
+    public int getTicketsSold() {
+        return 0;
     }
+
+    @Override
+    public int getTicketsAvailable() {
+        return 0;
+    }
+
+    @Override
+    public double getProfit() {
+        return 0;
+    }
+
+}
 
