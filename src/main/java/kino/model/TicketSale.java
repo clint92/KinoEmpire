@@ -15,9 +15,7 @@ public class TicketSale {
     private int phone_number;
     private double price;
 
-    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, String sale_date, int phone_number) {
-        this.reserved = reserved;
-        this.sold = sold;
+    public TicketSale(String movie_name, String sale_date, int seat, int row, int phone_number, double price) {
         this.price = price;
         this.movie_name = movie_name;
         this.seat = seat;

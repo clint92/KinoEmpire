@@ -31,11 +31,14 @@ public class CreateReservationController {
     }
 
     public void onCreateTicket() {
-        TicketSale ticketSale = new TicketSale();
-        ticketSale.setMovie_name(movieList.getSelectionModel().getSelectedItem().getMovieName());
-        ticketSale.setSale_date(screeningDate.getSelectionModel().getSelectedItem());
-        ticketSale.setPrice(Double.parseDouble(price.getText()));
-        ticketSale.setPhone_number(Integer.parseInt(phoneNumber.getText()));
+        String movieName = movieList.getSelectionModel().getSelectedItem().getMovieName();
+        String date = screeningDate.getSelectionModel().getSelectedItem();
+        int phone = Integer.parseInt(phoneNumber.getText());
+        int seat;
+        int row;
+        double ticketPrice = Double.parseDouble(price.getText());
+
+        TicketSale ticketSale = new TicketSale(movieName, date, 0, 0, phone, ticketPrice);
         System.out.println(ticketSale);
 
         // call method in main to store ticket in DB
