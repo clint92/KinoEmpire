@@ -5,23 +5,23 @@ package kino.model;
  */
 public class TicketSale {
 
-    int id_ticketSale;
-    int reserved;
-    int sold;
-    double price;
-    String movie_name;
-    int seat;
-    int row;
-    String sale_date;
+    private String movie_name;
+    private String sale_date;
+    private int id_ticketSale;
+    private int reserved;
+    private int sold;
+    private int seat;
+    private int phone_number;
+    private double price;
 
-    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, int row, String sale_date) {
+    public TicketSale(int reserved, int sold, double price, String movie_name, int seat, String sale_date, int phone_number) {
         this.reserved = reserved;
         this.sold = sold;
         this.price = price;
         this.movie_name = movie_name;
         this.seat = seat;
-        this.row = row;
         this.sale_date = sale_date;
+        this.phone_number = phone_number;
     }
 
     public TicketSale() {
@@ -82,14 +82,6 @@ public class TicketSale {
         this.seat = seat;
     }
 
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
     public String getSale_date() {
         return sale_date;
     }
@@ -98,9 +90,18 @@ public class TicketSale {
         this.sale_date = sale_date;
     }
 
+    public int getPhone_number() {
+        return this.phone_number;
+    }
+
+    public void setPhone_number(int phone_number) {
+        this.phone_number = phone_number;
+    }
+
     public String toString () {
 
-        return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved + " Sold: " + sold + " Price: " + price + "";
+        return "TicketSale ID: " + id_ticketSale + " Reserved: " + reserved +
+                " Sold: " + sold + " Price: " + price + " Movie: " + movie_name + " Screening Date: " + sale_date + " Phone Number: " + phone_number;
 
     }
 
