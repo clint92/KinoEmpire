@@ -125,7 +125,4 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
             ex.printStackTrace();
         }
     }
-
-
-
 }
