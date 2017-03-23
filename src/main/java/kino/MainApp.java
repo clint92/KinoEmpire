@@ -17,6 +17,7 @@ import kino.model.Movie;
 import kino.model.TicketSale;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainApp extends Application {
 
@@ -166,7 +167,16 @@ public class MainApp extends Application {
     }
 
     public void saveTicketToDB(TicketSale ticketSale) {
-        this.daoTicketSale.createTicketSale(ticketSale);
+        ArrayList<TicketSale> list = new ArrayList<>(daoTicketSale.getAllTicketSales());
+
+        for (TicketSale tick : list) {
+            if (ticketSale.getSeat() != tick.getSeat()) {
+                this.daoTicketSale.createTicketSale(ticketSale);
+            }
+        }
+
+
+
     }
 
     public void saveMovieToDB(Movie movie) {
