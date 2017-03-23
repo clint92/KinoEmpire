@@ -25,7 +25,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
     public void createTicketSaleParam(TicketSale ticketSale, int sale_status) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, row) VALUES (? ,? ,?, ?, ?, ?, ?)");
+            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, phone_number) VALUES (? ,? ,?, ?, ?, ?, ?)");
 
             if (sale_status == 0) {
                 prepStat.setDouble(1, ticketSale.getPrice());
@@ -60,7 +60,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
     public void createTicketSale(TicketSale ticketSale) {
 
         try {
-            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, row) VALUES (? ,? ,?, ?, ?, ?, ?)");
+            PreparedStatement prepStat = conn.prepareStatement("INSERT INTO ticketsale(price, sold, reserved, sale_date, movie_name, seat, phone_number) VALUES (? ,? ,?, ?, ?, ?, ?)");
 
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
@@ -97,7 +97,7 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
     /** Update TicketSale object in Database */
     public void updateTicketSale(TicketSale ticketSale) {
         try {
-            PreparedStatement prepStat = conn.prepareStatement("UPDATE ticketsale SET price = ?, sold = ?, reserved = ?, sale_date = ?, movie_name = ?, seat = ?, row = ?" + "WHERE ticket_id = ?");
+            PreparedStatement prepStat = conn.prepareStatement("UPDATE ticketsale SET price = ?, sold = ?, reserved = ?, sale_date = ?, movie_name = ?, seat = ?, phone_number = ?" + "WHERE ticket_id = ?");
 
             prepStat.setDouble(1, ticketSale.getPrice());
             prepStat.setInt(2, ticketSale.getSold());
@@ -137,12 +137,14 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
 
             while (resultset.next()) {
                 TicketSale ticketSale = new TicketSale();
-                ticketSale.setPrice(resultset.getDouble(1));
+
+
+                ticketSale.setReserved(resultset.getInt(1));
                 ticketSale.setSold(resultset.getInt(2));
-                ticketSale.setReserved(resultset.getInt(3));
-                ticketSale.setSale_date(resultset.getString(4));
-                ticketSale.setMovie_name(resultset.getString(5));
-                ticketSale.setSeat(resultset.getInt(6));
+                ticketSale.setPrice(resultset.getDouble(3));
+                ticketSale.setMovie_name(resultset.getString(4));
+                ticketSale.setSeat(resultset.getInt(5));
+                ticketSale.setSale_date(resultset.getString(6));
                 ticketSale.setPhone_number(resultset.getInt(7));
                 ticketList.add(count, ticketSale);
 
