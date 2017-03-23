@@ -56,8 +56,8 @@
         </rowConstraints>
          <children>
             <Circle fx:id="A1" fill="WHITE" onMouseClicked="#onA1Clicked" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="1" />
-            <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="2" />
+            <Circle fx:id="B1" fill="WHITE" onMouseClicked="#onB1Clicked" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="1" />
+            <Circle fx:id="C1" fill="WHITE" onMouseClicked="#onC1Clicked" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="2" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="3" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="4" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="5" />
@@ -71,29 +71,29 @@
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="13" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="14" />
             <Circle fx:id="A2" fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" />
-            <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" />
-            <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" />
-            <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" />
-            <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" />
+            <Circle fx:id="A3" fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" />
+            <Circle fx:id="A4" fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" />
+            <Circle fx:id="A5" fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" />
+            <Circle fx:id="A6" fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="8" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="9" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="10" />
-            <Circle fill="WHITE" layoutX="19.0" layoutY="20.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Circle fill="WHITE" layoutX="46.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Circle fill="WHITE" layoutX="46.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Circle fx:id="C2" fill="WHITE" layoutX="19.0" layoutY="20.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Circle fx:id="B3" fill="WHITE" layoutX="46.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Circle fx:id="B2" fill="WHITE" layoutX="46.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Circle fill="WHITE" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="11" />
-            <Circle fill="WHITE" layoutX="321.0" layoutY="20.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Circle fill="WHITE" layoutX="100.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Circle fx:id="B4" fill="WHITE" layoutX="321.0" layoutY="20.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Circle fx:id="C3" fill="WHITE" layoutX="100.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Circle fill="WHITE" layoutX="73.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="15" />
             <Circle fill="WHITE" layoutX="19.0" layoutY="330.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="16" />
             <Circle fill="WHITE" layoutX="19.0" layoutY="351.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="17" />
             <Circle fill="WHITE" layoutX="19.0" layoutY="372.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="18" />
             <Circle fill="WHITE" layoutX="19.0" layoutY="393.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="19" />
             <Circle fill="WHITE" layoutX="19.0" layoutY="414.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Circle fill="WHITE" layoutX="46.0" layoutY="80.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Circle fill="WHITE" layoutX="100.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Circle fx:id="C4" fill="WHITE" layoutX="46.0" layoutY="80.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Circle fx:id="B5" fill="WHITE" layoutX="100.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="1" />
             <Circle fill="WHITE" layoutX="127.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <Circle fill="WHITE" layoutX="154.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="1" />
             <Circle fill="WHITE" layoutX="181.0" layoutY="40.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="1" />
@@ -105,7 +105,7 @@
             <Circle fill="WHITE" layoutX="46.0" layoutY="100.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Circle fill="WHITE" layoutX="46.0" layoutY="120.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Circle fill="WHITE" layoutX="46.0" layoutY="141.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Circle fill="WHITE" layoutX="46.0" layoutY="162.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Circle fx:id="C5" fill="WHITE" layoutX="46.0" layoutY="162.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.rowIndex="2" />
             <Circle fill="WHITE" layoutX="127.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.rowIndex="2" />
             <Circle fill="WHITE" layoutX="154.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="2" />
             <Circle fill="WHITE" layoutX="181.0" layoutY="60.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="2" />
