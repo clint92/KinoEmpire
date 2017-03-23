@@ -128,6 +128,9 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         }
     }
 
+
+
+
     public List<TicketSale> getAllTicketSales() {
         List<TicketSale> ticketList = new ArrayList<TicketSale>();
         int count = 0;
@@ -158,6 +161,61 @@ public class DaoTicketSale implements DaoTicketSale_Interface {
         }
         return ticketList;
     }
+
+    public int getTicketsSold(){
+        int amount = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT sold FROM ticketsale WHERE sold = 1");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                amount++;
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return amount;
+    }
+
+    public int getTicketsAvailable(){
+        int amount = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT sold FROM ticketsale WHERE sold = 0");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                amount++;
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return amount;
+    }
+
+    public double getProfit(){
+        int sum = 0;
+        try{
+            PreparedStatement prepstat = conn.prepareStatement("SELECT price FROM ticketsale WHERE sold = 1");
+            ResultSet resultset = prepstat.executeQuery();
+            while(resultset.next()){
+                sum += resultset.getInt(1);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return sum;
+    }
+
 
 
 }
